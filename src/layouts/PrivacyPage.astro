@@ -1,0 +1,48 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import BaseLayout from './BaseLayout.astro';
+import { site } from '../config/site';
+import { languageOf, privacyPath } from '../config/routes';
+import { privacyAlternates } from '../lib/hreflang';
+
+interface Props {
+  entry: CollectionEntry<'privacy'>;
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+const { Content } = await render(entry);
+const { alternates, xDefaultUrl } = await privacyAlternates(entry.id);
+---
+
+<BaseLayout
+    title={data.title}
+    description={data.description}
+    language={data.language}
+    languageCode={languageOf(entry.id)}
+    path={privacyPath(entry.id)}
+    alternateLanguages={alternates}
+    xDefaultUrl={xDefaultUrl}
+    themeColor={data.theme_color}
+>
+    <div class:list={["page", "privacy-page", { "has-switcher": alternates.length > 1 }]}>
+        <LanguageSwitcher items={alternates} />
+
+        <h1>{data.title}</h1>
+
+        <div class="policy-meta">
+            <p><strong>{data.effective_date_label}:</strong> {data.effective_date}</p>
+            <p><strong>{data.last_updated_label}:</strong> {data.last_updated}</p>
+        </div>
+
+        <section class="controller-block">
+            <h2>{data.controller_title}</h2>
+            <p><strong>{data.name_label}:</strong> {site.contact.name}</p>
+            <p><strong>{data.email_label}:</strong> <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></p>
+        </section>
+
+        <Content />
+    </div>
+</BaseLayout>

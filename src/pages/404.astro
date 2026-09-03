@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { DEFAULT_LANGUAGE } from '../config/routes';
+import { site } from '../config/site';
+
+const primary = site.languageOptions.find((option) => option.code === DEFAULT_LANGUAGE);
+if (!primary) {
+  throw new Error(`No languageOptions entry for the default language "${DEFAULT_LANGUAGE}".`);
+}
+
+// The default language leads, as the heading; the rest follow as compact lines.
+const translations = site.languageOptions.filter((option) => option.code !== DEFAULT_LANGUAGE);
+---
+
+<BaseLayout
+    title="Not found"
+    description="This page does not exist."
+    language="en-US"
+    path="/404.html"
+    noindex
+>
+    <div id="not-found" class="page">
+        <p class="not-found-logo">
+          <img src={site.logo} alt={`${site.name} logo`} title={site.name}>
+        </p>
+
+        <h1>{primary.notFound.title}</h1>
+
+        <p>{primary.notFound.message}</p>
+
+        <div class="not-found-translations" aria-label="Page not found in other languages">
+          {translations.map((option) => (
+            <p lang={option.code}><strong>{option.notFound.title}{option.fullStop}</strong> {option.notFound.message}</p>
+          ))}
+        </div>
+
+        <nav class="not-found-languages" aria-label="Choose a language">
+          {site.languageOptions.map((option) => (
+            <a href={option.url} lang={option.code} title={option.label}>{option.flag} {option.label}</a>
+          ))}
+        </nav>
+    </div>
+</BaseLayout>

@@ -1,0 +1,356 @@
+:root {
+    color-scheme: only light;
+    --paper: #f4f6f5;
+    --ink: #14202b;
+    --muted: #64727b;
+    --line: #d9e0df;
+    --accent: #1264d6;
+
+    /* Language switcher, light by default; the dark pages override these below. */
+    --switcher-bg: rgba(255, 255, 255, 0.92);
+    --switcher-shadow: 0 10px 28px rgba(20, 32, 43, 0.1);
+    --switcher-active-bg: rgba(18, 100, 214, 0.12);
+    --switcher-active-ink: var(--accent);
+    --switcher-active-outline: rgba(18, 100, 214, 0.55);
+}
+
+* { box-sizing: border-box; }
+
+html {
+    background: var(--paper);
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    text-rendering: optimizeLegibility;
+}
+
+header { display: none; }
+
+main { min-height: calc(100vh - 150px); }
+
+.page {
+    width: min(100% - 40px, 760px);
+    margin: 0 auto;
+    padding: clamp(56px, 9vw, 112px) 0 80px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+a:hover { color: var(--ink); }
+
+h1, h2, h3 {
+    color: var(--ink);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 650;
+}
+
+h2 {
+    margin: 0 0 28px;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 600;
+}
+
+h3 {
+    margin-top: 42px;
+    font-size: 1.2rem;
+}
+
+blockquote {
+    margin: 28px 0;
+    padding: 18px 22px;
+    border-left: 3px solid var(--accent);
+    background: rgba(255, 255, 255, 0.55);
+    color: var(--muted);
+}
+
+.policy-meta {
+    margin: 0 0 42px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.policy-meta p {
+    margin: 0;
+}
+
+.controller-block {
+    margin: 0 0 46px;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.controller-block h2 {
+    margin-bottom: 16px;
+    font-size: 1.55rem;
+}
+
+.controller-block p {
+    margin: 4px 0;
+}
+
+code {
+    padding: 3px 6px;
+    border-radius: 5px;
+    background: #e8edec;
+    font-size: 0.9em;
+}
+
+hr {
+    margin: 44px 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+}
+
+footer {
+    width: min(100% - 40px, 760px);
+    margin: 0 auto;
+    padding: 14px 0 34px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+footer p { margin: 0; }
+.small { font-size: 0.85em; }
+
+.home-hero { max-width: 650px; }
+
+.language-switcher {
+    position: fixed;
+    z-index: 10;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 5px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--switcher-bg);
+    box-shadow: var(--switcher-shadow);
+    backdrop-filter: blur(12px);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 32px;
+    padding: 4px;
+    border-radius: 8px;
+    color: var(--ink);
+    line-height: 1.3;
+    text-decoration: none;
+}
+
+.language-option:hover,
+body.lang-en .language-option[lang="en"],
+body.lang-zh .language-option[lang="zh"],
+body.lang-hi .language-option[lang="hi"],
+body.lang-es .language-option[lang="es"],
+body.lang-fr .language-option[lang="fr"],
+body.lang-hu .language-option[lang="hu"] {
+    background: var(--switcher-active-bg);
+    color: var(--switcher-active-ink);
+}
+
+body.lang-en .language-option[lang="en"],
+body.lang-zh .language-option[lang="zh"],
+body.lang-hi .language-option[lang="hi"],
+body.lang-es .language-option[lang="es"],
+body.lang-fr .language-option[lang="fr"],
+body.lang-hu .language-option[lang="hu"] {
+    outline: 1px solid var(--switcher-active-outline);
+}
+
+.language-flag {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.home-logo { margin: 0 0 42px; }
+
+.home-logo img {
+    display: block;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+    color: var(--accent);
+    font-size: 0.76rem;
+    font-weight: 750;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.home-lead {
+    max-width: 570px;
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.55;
+}
+
+.home-intro {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+@media (max-width: 560px) {
+    body { font-size: 16px; }
+
+    .page, footer {
+        width: min(100% - 32px, 760px);
+    }
+
+    .page { padding-top: 40px; }
+    .home-logo { margin-bottom: 32px; }
+
+    .home-logo img {
+        width: 72px;
+        height: 72px;
+    }
+
+    .language-switcher {
+        top: 12px;
+        right: 12px;
+    }
+
+    .language-option {
+        width: 30px;
+        height: 29px;
+    }
+
+}
+
+/* The contact homepage uses a separate dark presentation. */
+body:has(#home) {
+    --paper: #0d151d;
+    --ink: #f2f6f8;
+    --muted: #aab8c1;
+    --line: #2c3a44;
+    --accent: #66a8ff;
+
+    --switcher-bg: rgba(20, 32, 43, 0.88);
+    --switcher-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    --switcher-active-bg: rgba(102, 168, 255, 0.16);
+    --switcher-active-ink: #fff;
+    --switcher-active-outline: rgba(102, 168, 255, 0.7);
+    background: var(--paper);
+    color: var(--ink);
+}
+
+body:has(#home) h1,
+body:has(#home) h2,
+body:has(#home) h3 {
+    color: var(--ink);
+}
+
+body:has(#home) .contact-link:hover {
+    color: #fff;
+}
+
+body:has(#not-found) {
+    --paper: #0d151d;
+    --ink: #f2f6f8;
+    --muted: #aab8c1;
+    --line: #2c3a44;
+    --accent: #66a8ff;
+
+    --switcher-bg: rgba(20, 32, 43, 0.88);
+    --switcher-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    --switcher-active-bg: rgba(102, 168, 255, 0.16);
+    --switcher-active-ink: #fff;
+    --switcher-active-outline: rgba(102, 168, 255, 0.7);
+    background: var(--paper);
+    color: var(--ink);
+}
+
+body:has(#not-found) h1,
+body:has(#not-found) h2,
+body:has(#not-found) h3 {
+    color: var(--ink);
+}
+
+.not-found-logo {
+    margin: 0 0 32px;
+}
+
+.not-found-logo img {
+    display: block;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+}
+
+.not-found-languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-top: 36px;
+}
+
+.not-found-translations {
+    margin-top: 30px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.not-found-translations p {
+    margin: 10px 0;
+}
+
+.not-found-translations strong {
+    color: var(--ink);
+}
+
+.not-found-languages a {
+    text-decoration: none;
+}
+
+/* The language switcher is fixed to the top-right corner, so it cannot push the
+   page down. Reserve room for it above the policy title — only on pages that
+   actually render one (a policy in a single language does not). */
+.privacy-page.has-switcher {
+    padding-top: 88px;
+}
+
+@media (max-width: 560px) {
+    .privacy-page.has-switcher {
+        padding-top: 68px;
+    }
+}

@@ -1,0 +1,25 @@
+---
+import { site } from '../config/site';
+import type { Alternate } from '../lib/hreflang';
+
+interface Props {
+  /** Languages this particular page exists in — not every language on the site. */
+  items: Alternate[];
+}
+
+const { items } = Astro.props;
+
+// Labels and flags are site-wide; the URL comes from the page's own alternates.
+const options = items.flatMap((item) => {
+  const option = site.languageOptions.find((candidate) => candidate.code === item.code);
+  return option ? [{ ...option, url: item.url }] : [];
+});
+---
+
+{options.length > 1 && (
+<nav class="language-switcher" aria-label="Choose language">
+    {options.map((option) => (
+        <a class="language-option" href={option.url} lang={option.code} aria-label={option.label} title={option.label}><span class="language-flag" aria-hidden="true">{option.flag}</span></a>
+    ))}
+</nav>
+)}

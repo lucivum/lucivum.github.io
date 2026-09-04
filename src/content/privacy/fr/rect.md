@@ -29,7 +29,15 @@ L’application peut stocker localement sur l’appareil :
 
 Ces données ne sont pas envoyées à mon propre serveur. Les données locales peuvent être supprimées en supprimant l’application ou ses données.
 
-## 4. Publicité Google AdMob
+## 4. Crédits sonores
+
+Les sons utilisés dans l’application proviennent de Pixabay, sous la [Pixabay Content License](https://pixabay.com/service/license-summary/) :
+
+- Musique de fond : [Musical relaxing guitar loop v5](https://pixabay.com/sound-effects/musical-relaxing-guitar-loop-v5-245859/)
+- Son de tapotement : [Film special effects tap notification](https://pixabay.com/sound-effects/film-special-effects-tap-notification-180637/)
+- Son de transition : [Film special effects transition base](https://pixabay.com/sound-effects/film-special-effects-transition-base-121422/)
+
+## 5. Publicité Google AdMob
 
 L’application affiche des publicités fournies par Google AdMob. Pour fournir, mesurer et protéger les services publicitaires, Google et ses partenaires peuvent traiter des informations techniques telles que :
 
@@ -43,7 +51,7 @@ L’utilisation de publicités personnalisées dépend des paramètres de consen
 
 Plus d’informations : [Politique de confidentialité de Google](https://policies.google.com/privacy) et [Google AdMob](https://support.google.com/admob/).
 
-## 5. Google User Messaging Platform (UMP)
+## 6. Google User Messaging Platform (UMP)
 
 L’application utilise Google User Messaging Platform (UMP) pour gérer les choix de confidentialité liés à la publicité.
 
@@ -51,7 +59,7 @@ Dans l’Espace économique européen, au Royaume-Uni et en Suisse, UMP peut aff
 
 Les réglages de confidentialité sont accessibles depuis **Infos / Options de confidentialité** lorsque UMP détermine qu’un point d’accès est requis.
 
-## 6. Firebase Crashlytics
+## 7. Firebase Crashlytics
 
 L’application utilise Firebase Crashlytics pour détecter, analyser et corriger les plantages et autres problèmes techniques.
 
@@ -67,34 +75,34 @@ L’application ne demande pas directement de nom, de numéro de téléphone ou 
 
 Google, Firebase et les autres fournisseurs tiers utilisés par l’application assurent une protection des données identique ou équivalente à celle décrite dans la présente Politique de confidentialité, selon leurs services respectifs.
 
-## 7. IDFA et App Tracking Transparency
+## 8. IDFA et App Tracking Transparency
 
 L’application ne demande actuellement pas l’autorisation App Tracking Transparency (ATT) et ne demande pas l’accès à l’identifiant publicitaire IDFA d’Apple. En cas de changement, je mettrai à jour cette politique et les déclarations de confidentialité des stores.
 
-## 8. Conservation des données
+## 9. Conservation des données
 
 Les données stockées localement restent sur l’appareil jusqu’à leur suppression par l’utilisateur, la désinstallation de l’application ou l’effacement de ses données.
 
 Google AdMob et Firebase Crashlytics traitent et conservent les informations selon leurs propres politiques. Selon Firebase, Crashlytics conserve certaines données de plantage et certains identifiants pendant 90 jours.
 
-## 9. Sécurité des données
+## 10. Sécurité des données
 
 Les communications réseau utilisent des protocoles sécurisés pris en charge par les services concernés. Les responsables appliquent des mesures techniques et organisationnelles raisonnables pour protéger les données.
 
-## 10. Vos droits
+## 11. Vos droits
 
 Sous réserve du droit applicable, vous pouvez demander l’accès, la rectification ou la suppression de vos données personnelles, la limitation du traitement, vous opposer au traitement, retirer votre consentement et demander des informations sur le traitement.
 
 Les demandes peuvent être envoyées aux coordonnées du responsable indiquées ci-dessus. Les réclamations peuvent être adressées à l’autorité compétente en matière de protection des données de votre pays de résidence ou de situation.
 
-## 11. Enfants
+## 12. Enfants
 
 L’application ne s’adresse pas aux enfants et ne recueille pas sciemment de données personnelles concernant des enfants.
 
-## 12. Modifications de cette politique
+## 13. Modifications de cette politique
 
 Je peux mettre à jour cette Politique de confidentialité lors de l’introduction d’une nouvelle fonctionnalité, d’un SDK ou d’une nouvelle pratique de traitement. La version la plus récente indiquera une nouvelle date de mise à jour.
 
-## 13. Contact
+## 14. Contact
 
 Pour toute question relative à la confidentialité, utilisez les coordonnées du responsable indiquées ci-dessus.

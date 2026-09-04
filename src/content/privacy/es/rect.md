@@ -29,7 +29,15 @@ La aplicación puede almacenar localmente en el dispositivo:
 
 Estos datos no se envían a mi propio servidor. Los datos locales se pueden eliminar borrando la aplicación o sus datos.
 
-## 4. Publicidad de Google AdMob
+## 4. Créditos de sonido
+
+Los sonidos utilizados en la aplicación proceden de Pixabay, bajo la [Pixabay Content License](https://pixabay.com/service/license-summary/):
+
+- Música de fondo: [Musical relaxing guitar loop v5](https://pixabay.com/sound-effects/musical-relaxing-guitar-loop-v5-245859/)
+- Sonido de toque: [Film special effects tap notification](https://pixabay.com/sound-effects/film-special-effects-tap-notification-180637/)
+- Sonido de transición: [Film special effects transition base](https://pixabay.com/sound-effects/film-special-effects-transition-base-121422/)
+
+## 5. Publicidad de Google AdMob
 
 La aplicación muestra anuncios proporcionados por Google AdMob. Para ofrecer, medir y proteger los servicios publicitarios, Google y sus socios publicitarios pueden procesar información técnica como:
 
@@ -43,7 +51,7 @@ El uso de publicidad personalizada depende de los ajustes de consentimiento y ex
 
 Más información: [Política de privacidad de Google](https://policies.google.com/privacy) y [Google AdMob](https://support.google.com/admob/).
 
-## 5. Google User Messaging Platform (UMP)
+## 6. Google User Messaging Platform (UMP)
 
 La aplicación utiliza Google User Messaging Platform (UMP) para gestionar las opciones de privacidad relacionadas con la publicidad.
 
@@ -51,7 +59,7 @@ En el Espacio Económico Europeo, el Reino Unido y Suiza, UMP puede mostrar los 
 
 Los ajustes de privacidad están disponibles en **Información / Opciones de privacidad** cuando UMP determina que debe mostrarse ese acceso.
 
-## 6. Firebase Crashlytics
+## 7. Firebase Crashlytics
 
 La aplicación utiliza Firebase Crashlytics para detectar, investigar y solucionar fallos y otros problemas técnicos.
 
@@ -67,34 +75,34 @@ La aplicación no solicita directamente nombre, teléfono ni correo electrónico
 
 Google, Firebase y los demás proveedores externos utilizados por la aplicación ofrecen una protección de datos igual o equivalente a la descrita en esta Política de privacidad, según corresponda a sus servicios.
 
-## 7. IDFA y App Tracking Transparency
+## 8. IDFA y App Tracking Transparency
 
 Actualmente la aplicación no solicita permiso de App Tracking Transparency (ATT) ni acceso al identificador publicitario IDFA de Apple. Si esto cambia, actualizaré esta política y las declaraciones de privacidad de las tiendas.
 
-## 8. Conservación de datos
+## 9. Conservación de datos
 
 Los datos almacenados localmente permanecen en el dispositivo hasta que el usuario los elimina, desinstala la aplicación o borra sus datos.
 
 Google AdMob y Firebase Crashlytics procesan y conservan la información según sus propias políticas. Según Firebase, Crashlytics conserva ciertos datos de fallos e identificadores durante 90 días.
 
-## 9. Seguridad de los datos
+## 10. Seguridad de los datos
 
 Las comunicaciones de red utilizan protocolos seguros compatibles con los servicios correspondientes. Los responsables aplican medidas técnicas y organizativas razonables para proteger los datos.
 
-## 10. Tus derechos
+## 11. Tus derechos
 
 Según la legislación aplicable, puedes solicitar acceso, rectificación o eliminación de tus datos personales, limitación u oposición al tratamiento, retirada del consentimiento e información sobre el tratamiento.
 
 Las solicitudes pueden enviarse utilizando los datos de contacto del responsable indicados anteriormente. Las reclamaciones pueden presentarse ante la autoridad de protección de datos competente de tu país de residencia o ubicación.
 
-## 11. Menores
+## 12. Menores
 
 La aplicación no está dirigida a menores y no recopila conscientemente datos personales de menores.
 
-## 12. Cambios en esta política
+## 13. Cambios en esta política
 
 Puedo actualizar esta Política de privacidad al introducir una función, SDK o práctica de tratamiento nueva. La versión más reciente mostrará una nueva fecha de actualización.
 
-## 13. Contacto
+## 14. Contacto
 
 Para consultas sobre privacidad, utiliza los datos de contacto del responsable indicados anteriormente.

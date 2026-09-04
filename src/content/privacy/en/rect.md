@@ -29,7 +29,15 @@ The app may store the following information locally on the device:
 
 This information is not sent to my own server. Local data can be removed by deleting the app or clearing its app data.
 
-## 4. Google AdMob advertising
+## 4. Sound credits
+
+The sounds used in the app are from Pixabay, under the [Pixabay Content License](https://pixabay.com/service/license-summary/):
+
+- Background music: [Musical relaxing guitar loop v5](https://pixabay.com/sound-effects/musical-relaxing-guitar-loop-v5-245859/)
+- Tap sound: [Film special effects tap notification](https://pixabay.com/sound-effects/film-special-effects-tap-notification-180637/)
+- Transition sound: [Film special effects transition base](https://pixabay.com/sound-effects/film-special-effects-transition-base-121422/)
+
+## 5. Google AdMob advertising
 
 The app displays advertisements provided by Google AdMob. To serve, measure, and protect advertising services, Google and its advertising partners may process technical information such as:
 
@@ -46,7 +54,7 @@ More information:
 - [Google Privacy Policy](https://policies.google.com/privacy)
 - [Google AdMob](https://support.google.com/admob/)
 
-## 5. Google User Messaging Platform (UMP)
+## 6. Google User Messaging Platform (UMP)
 
 The app uses Google User Messaging Platform (UMP) to manage privacy choices related to advertising.
 
@@ -54,7 +62,7 @@ For users in the European Economic Area, the United Kingdom, and Switzerland, UM
 
 Privacy settings are available from **Info / Privacy options** in the app when UMP determines that a privacy-options entry point is required.
 
-## 6. Firebase Crashlytics
+## 7. Firebase Crashlytics
 
 The app uses Firebase Crashlytics to detect, investigate, and fix crashes and other technical problems.
 
@@ -72,36 +80,36 @@ More information is available in the [Firebase Privacy and Security documentatio
 
 Google, Firebase, and the other third-party service providers used by the app provide data protection that is the same as or equivalent to the protection described in this Privacy Policy, as applicable to their services.
 
-## 7. IDFA and App Tracking Transparency
+## 8. IDFA and App Tracking Transparency
 
 The app currently does not request App Tracking Transparency (ATT) permission and does not request access to Apple’s IDFA advertising identifier.
 
 If this changes in the future, this Privacy Policy and the app-store privacy disclosures will be updated.
 
-## 8. Data retention
+## 9. Data retention
 
 Information stored locally by the app remains on the device until the user deletes it, removes the app, or clears the app’s data.
 
 Google AdMob and Firebase Crashlytics process and retain information according to their own privacy, security, and retention policies. According to Firebase, Crashlytics retains certain crash and identifier data for 90 days.
 
-## 9. Data security
+## 10. Data security
 
 Network communication uses secure protocols supported by the relevant services. The relevant data controllers apply reasonable technical and organizational measures to protect data.
 
-## 10. Your rights
+## 11. Your rights
 
 Subject to applicable law, you may request access to personal data concerning you, correction or deletion of data, restriction of processing, objection to processing, withdrawal of consent, and information about data processing.
 
 Requests may be sent using the controller contact details listed above. Complaints may be submitted to the relevant data-protection authority in your country of residence or location.
 
-## 11. Children
+## 12. Children
 
 The app is not directed at children and does not knowingly collect personal information from children.
 
-## 12. Changes to this policy
+## 13. Changes to this policy
 
 I may update this Privacy Policy when introducing a new feature, SDK, or data-processing practice. The latest version will show a new “Last updated” date.
 
-## 13. Contact
+## 14. Contact
 
 For privacy questions, use the controller contact details listed above.

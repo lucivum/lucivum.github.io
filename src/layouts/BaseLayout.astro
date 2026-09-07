@@ -41,6 +41,15 @@ const logo = absolute(site.logo);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18429356075"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-18429356075');
+    </script>
     <meta name="theme-color" content={themeColor}>
 
     <title>{fullTitle}</title>

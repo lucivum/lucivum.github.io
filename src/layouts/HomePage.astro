@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import BaseLayout from './BaseLayout.astro';
+import { site } from '../config/site';
+import { homePath } from '../config/routes';
+import { homeAlternates } from '../lib/hreflang';
+
+interface Props {
+  entry: CollectionEntry<'home'>;
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+const { alternates, xDefaultUrl } = await homeAlternates();
+---
+
+<BaseLayout
+    title={data.title}
+    description={data.description}
+    language={data.language}
+    languageCode={data.language_code}
+    path={homePath(entry.id)}
+    alternateLanguages={alternates}
+    xDefaultUrl={xDefaultUrl}
+    themeColor={data.theme_color}
+>
+    <div class="page">
+        <div id="home">
+            <LanguageSwitcher items={alternates} />
+            <div class="home-hero">
+                <p class="home-logo">
+                    <img src="/images/logo.png" alt={`${site.name} logo`} title={site.name}>
+                </p>
+                <p class="eyebrow">{site.name}</p>
+                <h1>{data.home_heading}</h1>
+                <p class="home-intro">{data.home_intro}</p>
+                <p class="home-lead">{data.home_lead}</p>
+                <a class="contact-link" href={`mailto:${site.contact.email}`}>{site.contact.email} <span aria-hidden="true">↗</span></a>
+            </div>
+        </div>
+    </div>
+</BaseLayout>

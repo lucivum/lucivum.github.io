@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+
+import PrivacyPage from '../../../../layouts/PrivacyPage.astro';
+import { appOf, isDefaultLanguage, languageOf } from '../../../../config/routes';
+
+export async function getStaticPaths() {
+  const policies = await getCollection('privacy');
+  // Default-language policies live at /<app>/privacy/ via src/pages/[app]/privacy/.
+  return policies
+    .filter((policy) => !isDefaultLanguage(policy.id))
+    .map((policy) => ({
+      params: { lang: languageOf(policy.id), app: appOf(policy.id) },
+      props: { entry: policy },
+    }));
+}
+
+const { entry } = Astro.props;
+---
+
+<PrivacyPage entry={entry} />

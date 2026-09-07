@@ -1,0 +1,13 @@
+---
+import { getEntry } from 'astro:content';
+
+import HomePage from '../layouts/HomePage.astro';
+import { DEFAULT_LANGUAGE } from '../config/routes';
+
+const entry = await getEntry('home', DEFAULT_LANGUAGE);
+if (!entry) {
+  throw new Error(`Missing src/content/home/${DEFAULT_LANGUAGE}.md for the default language.`);
+}
+---
+
+<HomePage entry={entry} />

@@ -1,0 +1,87 @@
+---
+import Footer from '../components/Footer.astro';
+import { absolute, site } from '../config/site';
+import type { Alternate } from '../lib/hreflang';
+
+interface Props {
+  title: string;
+  description: string;
+  /** BCP-47 tag for `<html lang>`, e.g. `hu-HU`. Falls back to the site language. */
+  language?: string;
+  /** Short code used for the `lang-xx` body class the language switcher styles against. */
+  languageCode?: string;
+  /** Root-relative path of this page, used for the canonical and og/twitter URLs. */
+  path: string;
+  alternateLanguages?: Alternate[];
+  xDefaultUrl?: string;
+  themeColor?: string;
+  /** Error pages: no canonical URL to claim, and nothing worth indexing. */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  language = site.language,
+  languageCode,
+  path,
+  alternateLanguages = [],
+  xDefaultUrl,
+  themeColor = site.themeColor,
+  noindex = false,
+} = Astro.props;
+
+const permalink = absolute(path);
+const fullTitle = `${title} - ${site.name}`;
+const logo = absolute(site.logo);
+---
+
+<!DOCTYPE html>
+<html lang={language}>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content={themeColor}>
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description}>
+    <meta name="author" content={site.contact.name}>
+    {noindex
+      ? <meta name="robots" content="noindex">
+      : <link rel="canonical" href={permalink}>}
+    {alternateLanguages.map((alternate) => (
+        <link rel="alternate" hreflang={alternate.code} href={absolute(alternate.url)}>
+    ))}
+    {xDefaultUrl && <link rel="alternate" hreflang="x-default" href={absolute(xDefaultUrl)}>}
+    <link rel="icon" href={site.logo} type="image/png">
+    <!-- Opaque and square on purpose: iOS composites alpha onto black and
+         applies its own corner mask. -->
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <meta property="og:url" content={permalink}>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content={site.name}>
+    <meta property="og:title" content={fullTitle}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={logo}>
+
+    <!-- `summary`, not `summary_large_image`: the share image is a square logo.
+         A large card wants ~1.91:1 and centre-crops anything else. -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content={permalink}>
+    <meta name="twitter:title" content={fullTitle}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={logo}>
+
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class={languageCode ? `lang-${languageCode}` : undefined}>
+    <main>
+    <slot />
+    </main>
+
+    <Footer />
+</body>
+</html>

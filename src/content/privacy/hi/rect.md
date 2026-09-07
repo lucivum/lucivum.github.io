@@ -36,6 +36,7 @@ Rectangle एक मोबाइल गेम है जिसमें खि�
 - पृष्ठभूमि संगीत: [Musical relaxing guitar loop v5](https://pixabay.com/sound-effects/musical-relaxing-guitar-loop-v5-245859/)
 - टैप ध्वनि: [Film special effects tap notification](https://pixabay.com/sound-effects/film-special-effects-tap-notification-180637/)
 - ट्रांज़िशन ध्वनि: [Film special effects transition base](https://pixabay.com/sound-effects/film-special-effects-transition-base-121422/)
+- त्रुटि ध्वनि: [Film special effects training program incorrect](https://pixabay.com/sound-effects/film-special-effects-training-program-incorrect1-88736/)
 
 ## 5. Google AdMob विज्ञापन
 

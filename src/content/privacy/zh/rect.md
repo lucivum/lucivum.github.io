@@ -36,6 +36,7 @@ Rectangle 是一款手机游戏，玩家需要寻找由四个相同颜色方块�
 - 背景音乐：[Musical relaxing guitar loop v5](https://pixabay.com/sound-effects/musical-relaxing-guitar-loop-v5-245859/)
 - 点击音效：[Film special effects tap notification](https://pixabay.com/sound-effects/film-special-effects-tap-notification-180637/)
 - 切换音效：[Film special effects transition base](https://pixabay.com/sound-effects/film-special-effects-transition-base-121422/)
+- 错误音效：[Film special effects training program incorrect](https://pixabay.com/sound-effects/film-special-effects-training-program-incorrect1-88736/)
 
 ## 5. Google AdMob 广告
 

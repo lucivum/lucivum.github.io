@@ -12,98 +12,105 @@ name_label: "Nombre"
 email_label: "Correo electrónico"
 ---
 
-## 2. Sobre la aplicación
+## 2. Acerca de la aplicación
 
-Rectangle es un juego móvil en el que los jugadores encuentran cuadrados o rectángulos formados por cuatro fichas del mismo color.
+Rectangle es un juego para móvil en el que los jugadores deben encontrar cuadrados o rectángulos formados por cuatro fichas del mismo color.
 
-La aplicación no requiere cuenta, registro, nombre, teléfono ni correo electrónico. No gestiono un sistema propio de cuentas o backend. La aplicación no solicita acceso a la ubicación, contactos, cámara, micrófono ni biblioteca de fotos. No incluye compras integradas ni suscripciones.
+La aplicación no requiere cuenta, registro, nombre, número de teléfono ni dirección de correo electrónico. La aplicación no gestiona su propio sistema de cuentas de usuario ni su propio servidor. La aplicación no solicita acceso a la ubicación, los contactos, la cámara, el micrófono ni a los datos de la galería de fotos. La aplicación no incluye compras integradas ni funciones de suscripción.
 
 ## 3. Datos almacenados localmente
 
-La aplicación puede almacenar localmente en el dispositivo:
+La aplicación puede almacenar la siguiente información localmente en el dispositivo:
 
-- preferencias del juego y de visualización;
+- preferencias de juego y visualización;
 - ajustes de sonido y música;
 - si se ha mostrado la ayuda del juego;
-- preferencias del recordatorio de valoración.
+- preferencias de solicitud de reseñas.
 
-Estos datos no se envían a mi propio servidor. Los datos locales se pueden eliminar borrando la aplicación o sus datos.
+Esta información no se envía a mi propio servidor. Los datos locales se pueden eliminar borrando la aplicación o limpiando sus datos.
 
 ## 4. Créditos de sonido
 
-Los sonidos utilizados en la aplicación proceden de Pixabay, bajo la [Pixabay Content License](https://pixabay.com/service/license-summary/):
+Los sonidos utilizados en la aplicación proceden de Pixabay y están sujetos a la [Licencia de contenido de Pixabay](https://pixabay.com/service/license-summary/):
 
 - Música de fondo: [Musical relaxing guitar loop v5](https://pixabay.com/sound-effects/musical-relaxing-guitar-loop-v5-245859/)
-- Sonido de toque: [Film special effects tap notification](https://pixabay.com/sound-effects/film-special-effects-tap-notification-180637/)
-- Sonido de transición: [Film special effects transition base](https://pixabay.com/sound-effects/film-special-effects-transition-base-121422/)
-- Sonido de error: [Film special effects training program incorrect](https://pixabay.com/sound-effects/film-special-effects-training-program-incorrect1-88736/)
+- Sonido al pulsar: [Notificación de pulsación con efectos especiales de cine](https://pixabay.com/sound-effects/film-special-effects-tap-notification-180637/)
+- Sonido de transición: [Base de transición con efectos especiales de cine](https://pixabay.com/sound-effects/film-special-effects-transition-base-121422/)
+- Sonido de error: [Efectos especiales de cine: programa de entrenamiento incorrecto](https://pixabay.com/sound-effects/film-special-effects-training-program-incorrect1-88736/)
 
 ## 5. Publicidad de Google AdMob
 
-La aplicación muestra anuncios proporcionados por Google AdMob. Para ofrecer, medir y proteger los servicios publicitarios, Google y sus socios publicitarios pueden procesar información técnica como:
+La aplicación muestra anuncios proporcionados por Google AdMob. Para ofrecer, medir y proteger los servicios publicitarios, Google y sus socios publicitarios pueden tratar información técnica como:
 
-- dirección IP e información regional aproximada;
-- información del dispositivo y del sistema operativo;
-- identificadores técnicos o publicitarios;
-- impresiones e interacciones con anuncios;
-- versión de la aplicación y entorno técnico de funcionamiento.
+- Dirección IP e información regional aproximada;
+- Información sobre el dispositivo y el sistema operativo;
+- Identificadores técnicos o publicitarios;
+- Impresiones e interacciones con anuncios;
+- Versión de la aplicación y entorno técnico de funcionamiento.
 
 El uso de publicidad personalizada depende de los ajustes de consentimiento y exclusión aplicables.
 
-Más información: [Política de privacidad de Google](https://policies.google.com/privacy) y [Google AdMob](https://support.google.com/admob/).
+Más información:
 
-## 6. Google User Messaging Platform (UMP)
+- [Política de privacidad de Google](https://policies.google.com/privacy)
+- [Google AdMob](https://support.google.com/admob/)
 
-La aplicación utiliza Google User Messaging Platform (UMP) para gestionar las opciones de privacidad relacionadas con la publicidad.
+## 6. Plataforma de mensajería para usuarios de Google (UMP)
 
-En el Espacio Económico Europeo, el Reino Unido y Suiza, UMP puede mostrar los mensajes de consentimiento necesarios. Los usuarios de los estados de EE. UU. aplicables pueden gestionar las opciones de exclusión disponibles desde los ajustes de privacidad de la aplicación.
+La aplicación utiliza la Plataforma de mensajería para usuarios de Google (UMP) para gestionar las opciones de privacidad relacionadas con la publicidad.
 
-Los ajustes de privacidad están disponibles en **Información / Opciones de privacidad** cuando UMP determina que debe mostrarse ese acceso.
+Para los usuarios del Espacio Económico Europeo, el Reino Unido y Suiza, la UMP puede mostrar los mensajes obligatorios de consentimiento de privacidad. Los usuarios de los estados de EE. UU. en los que sea aplicable pueden gestionar las opciones de exclusión disponibles a través de los ajustes de privacidad de la aplicación.
+
+Los ajustes de privacidad están disponibles en **Información / Opciones de privacidad** de la aplicación cuando la UMP determina que es necesario un punto de acceso a las opciones de privacidad.
 
 ## 7. Firebase Crashlytics
 
 La aplicación utiliza Firebase Crashlytics para detectar, investigar y solucionar fallos y otros problemas técnicos.
 
-Crashlytics puede procesar, entre otros:
+Crashlytics puede procesar, entre otras cosas:
 
 - informes de fallos y trazas de pila;
-- versión e identificador del paquete;
-- información del sistema operativo y del dispositivo;
+- la versión de la aplicación y el identificador del paquete;
+- información sobre el sistema operativo y el dispositivo;
 - identificadores de instalación de Crashlytics y Firebase;
-- momento y contexto técnico del fallo.
+- la hora y el contexto técnico de un fallo.
 
-La aplicación no solicita directamente nombre, teléfono ni correo electrónico. Más información en la [documentación de privacidad y seguridad de Firebase](https://firebase.google.com/support/privacy).
+La aplicación no solicita directamente el nombre, el número de teléfono ni la dirección de correo electrónico.
 
-Google, Firebase y los demás proveedores externos utilizados por la aplicación ofrecen una protección de datos igual o equivalente a la descrita en esta Política de privacidad, según corresponda a sus servicios.
+Hay más información disponible en la [documentación de privacidad y seguridad de Firebase](https://firebase.google.com/support/privacy).
 
-## 8. IDFA y App Tracking Transparency
+Google, Firebase y los demás proveedores de servicios externos utilizados por la aplicación ofrecen una protección de datos idéntica o equivalente a la descrita en la presente Política de privacidad, según sea aplicable a sus servicios.
 
-Actualmente la aplicación no solicita permiso de App Tracking Transparency (ATT) ni acceso al identificador publicitario IDFA de Apple. Si esto cambia, actualizaré esta política y las declaraciones de privacidad de las tiendas.
+## 8. IDFA y «App Tracking Transparency»
+
+Actualmente, la aplicación no solicita el permiso de «App Tracking Transparency» (ATT) ni pide acceso al identificador publicitario IDFA de Apple.
+
+Si esto cambiara en el futuro, se actualizarán esta Política de privacidad y la información sobre privacidad de la tienda de aplicaciones.
 
 ## 9. Conservación de datos
 
-Los datos almacenados localmente permanecen en el dispositivo hasta que el usuario los elimina, desinstala la aplicación o borra sus datos.
+La información almacenada localmente por la aplicación permanece en el dispositivo hasta que el usuario la elimine, desinstale la aplicación o borre los datos de la misma.
 
-Google AdMob y Firebase Crashlytics procesan y conservan la información según sus propias políticas. Según Firebase, Crashlytics conserva ciertos datos de fallos e identificadores durante 90 días.
+Google AdMob y Firebase Crashlytics procesan y conservan la información de acuerdo con sus propias políticas de privacidad, seguridad y conservación de datos. Según Firebase, Crashlytics conserva determinados datos sobre fallos e identificadores durante 90 días.
 
 ## 10. Seguridad de los datos
 
-Las comunicaciones de red utilizan protocolos seguros compatibles con los servicios correspondientes. Los responsables aplican medidas técnicas y organizativas razonables para proteger los datos.
+La comunicación de red utiliza protocolos seguros compatibles con los servicios pertinentes. Los responsables del tratamiento de datos pertinentes aplican medidas técnicas y organizativas razonables para proteger los datos.
 
 ## 11. Tus derechos
 
-Según la legislación aplicable, puedes solicitar acceso, rectificación o eliminación de tus datos personales, limitación u oposición al tratamiento, retirada del consentimiento e información sobre el tratamiento.
+Con sujeción a la legislación aplicable, puedes solicitar el acceso a los datos personales que te conciernen, la rectificación o supresión de los datos, la limitación del tratamiento, la oposición al tratamiento, la retirada del consentimiento e información sobre el tratamiento de datos.
 
-Las solicitudes pueden enviarse utilizando los datos de contacto del responsable indicados anteriormente. Las reclamaciones pueden presentarse ante la autoridad de protección de datos competente de tu país de residencia o ubicación.
+Las solicitudes pueden enviarse utilizando los datos de contacto del responsable del tratamiento indicados anteriormente. Las reclamaciones pueden presentarse ante la autoridad de protección de datos competente de su país de residencia o de su ubicación.
 
 ## 12. Menores
 
-La aplicación no está dirigida a menores y no recopila conscientemente datos personales de menores.
+La aplicación no está dirigida a menores y no recopila deliberadamente información personal de menores.
 
-## 13. Cambios en esta política
+## 13. Modificaciones de esta política
 
-Puedo actualizar esta Política de privacidad al introducir una función, SDK o práctica de tratamiento nueva. La versión más reciente mostrará una nueva fecha de actualización.
+Puedo actualizar esta Política de privacidad cuando se introduzca una nueva función, un SDK o una práctica de tratamiento de datos. La última versión mostrará una nueva fecha de «Última actualización».
 
 ## 14. Contacto
 
-Para consultas sobre privacidad, utiliza los datos de contacto del responsable indicados anteriormente.
+Para cualquier consulta sobre privacidad, utiliza los datos de contacto del responsable del tratamiento que figuran más arriba.

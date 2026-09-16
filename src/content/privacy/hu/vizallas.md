@@ -12,13 +12,13 @@ name_label: "Név"
 email_label: "E-mail"
 ---
 
-## 2. Az alkalmazásról
+## 1. Az alkalmazásról
 
 A Vízállás alkalmazás Magyarország folyóinak és tavainak aktuális vízállási adatait, valamint kapcsolódó híreket jelenít meg.
 
 Az alkalmazás használatához nem szükséges felhasználói fiók, regisztráció, név, telefonszám vagy e-mail-cím megadása. Az alkalmazás nem működtet saját felhasználói fiók- vagy alkalmazásszervert.
 
-## 3. Helyben tárolt adatok
+## 2. Helyben tárolt adatok
 
 Az alkalmazás a készüléken helyben tárolhatja:
 
@@ -29,7 +29,7 @@ Az alkalmazás a készüléken helyben tárolhatja:
 
 Ezeket az adatokat nem továbbítjuk saját szerverre. A helyi adatok az alkalmazás törlésével vagy az alkalmazás adatainak törlésével távolíthatók el.
 
-## 4. Külső adatforrások és hálózati kapcsolatok
+## 3. Külső adatforrások és hálózati kapcsolatok
 
 Az alkalmazás külső szolgáltatásokból tölthet adatokat, többek között:
 
@@ -39,7 +39,7 @@ Az alkalmazás külső szolgáltatásokból tölthet adatokat, többek között:
 
 Az alkalmazás egyes funkciói külső weboldalakat nyithatnak meg. A külső szolgáltatók saját adatvédelmi szabályzataik szerint kezelik az adatokat.
 
-## 5. Google AdMob reklámok
+## 4. Google AdMob reklámok
 
 Az alkalmazás Google AdMob reklámokat jelenít meg. A reklámok kiszolgálásához, méréséhez és biztonságos működéséhez a Google és reklámpartnerei technikai adatokat kezelhetnek, például:
 
@@ -56,7 +56,7 @@ További információ:
 - [Google adatvédelmi irányelvek](https://policies.google.com/privacy)
 - [Google AdMob](https://support.google.com/admob/)
 
-## 6. Google User Messaging Platform (UMP)
+## 5. Google User Messaging Platform (UMP)
 
 Az alkalmazás a Google User Messaging Platformot (UMP) használja a reklámokkal kapcsolatos adatvédelmi beállítások kezelésére.
 
@@ -64,7 +64,7 @@ Az Európai Gazdasági Térségben, az Egyesült Királyságban és Svájcban a 
 
 Az adatvédelmi beállítások az alkalmazás **Információ / Adatvédelmi beállítások** menüpontjából érhetők el, amikor a UMP ezt szükségesnek jelzi.
 
-## 7. Firebase Crashlytics
+## 6. Firebase Crashlytics
 
 Az alkalmazás Firebase Crashlytics szolgáltatást használ az összeomlások és egyéb technikai hibák felismerésére, kivizsgálására és javítására.
 
@@ -84,23 +84,23 @@ A Google, a Firebase és az alkalmazás által használt egyéb harmadik fél sz
 szolgáltatásaik tekintetében a jelen tájékoztatóban leírtakkal azonos vagy azzal egyenértékű
 adatvédelmet biztosítanak.
 
-## 8. IDFA és App Tracking Transparency
+## 7. IDFA és App Tracking Transparency
 
 Az alkalmazás jelenleg nem kér App Tracking Transparency (ATT) engedélyt, és nem kér hozzáférést az Apple IDFA reklámazonosítóhoz.
 
 Ha ez a gyakorlat a jövőben megváltozik, jelen tájékoztatót és az alkalmazásboltok adatvédelmi nyilatkozatait frissítjük.
 
-## 9. Adatmegőrzés
+## 8. Adatmegőrzés
 
 Az alkalmazás által helyben tárolt adatok a készüléken maradnak, amíg a felhasználó azokat nem törli, az alkalmazást el nem távolítja, vagy az alkalmazás adatait nem törli.
 
 A Google AdMob és a Firebase Crashlytics a saját adatvédelmi, biztonsági és megőrzési szabályzataik szerint kezelik az adatokat. A Firebase tájékoztatása szerint a Crashlytics bizonyos összeomlási és azonosító adatait 90 napig őrzi meg.
 
-## 10. Adatbiztonság
+## 9. Adatbiztonság
 
 Az alkalmazás és a külső adatforrások közötti hálózati kommunikáció biztonságos protokollokon keresztül történik. Az adatkezelők ésszerű technikai és szervezési intézkedéseket alkalmaznak az adatok védelmére.
 
-## 11. Felhasználói jogok
+## 10. Felhasználói jogok
 
 A vonatkozó jogszabályok alapján a felhasználó kérheti:
 
@@ -115,14 +115,14 @@ Kérelmeket a fenti adatkezelői elérhetőségen lehet küldeni.
 
 A reklámokhoz kapcsolódó consent- és opt-out-beállítások az alkalmazás adatvédelmi beállításainál kezelhetők. Panasz a lakóhely vagy tartózkodási hely szerinti adatvédelmi hatóságnál tehető; Magyarországon ez a NAIH.
 
-## 12. Gyermekek
+## 11. Gyermekek
 
 Az alkalmazás nem gyermekeknek szóló szolgáltatás, és tudatosan nem gyűjt gyermekektől személyes adatokat.
 
-## 13. A tájékoztató módosítása
+## 12. A tájékoztató módosítása
 
 Ezt a tájékoztatót új funkció, SDK vagy adatkezelési gyakorlat bevezetésekor frissíthetjük. A frissített változat új utolsó frissítési dátummal jelenik meg.
 
-## 14. Kapcsolat
+## 13. Kapcsolat
 
 Adatvédelmi kérdés esetén használd a fenti adatkezelői elérhetőséget.

@@ -12,13 +12,13 @@ name_label: "Nombre"
 email_label: "Correo electrónico"
 ---
 
-## 2. Acerca de la aplicación
+## 1. Acerca de la aplicación
 
 Rectangle es un juego para móvil en el que los jugadores deben encontrar cuadrados o rectángulos formados por cuatro fichas del mismo color.
 
 La aplicación no requiere cuenta, registro, nombre, número de teléfono ni dirección de correo electrónico. La aplicación no gestiona su propio sistema de cuentas de usuario ni su propio servidor. La aplicación no solicita acceso a la ubicación, los contactos, la cámara, el micrófono ni a los datos de la galería de fotos. La aplicación no incluye compras integradas ni funciones de suscripción.
 
-## 3. Datos almacenados localmente
+## 2. Datos almacenados localmente
 
 La aplicación puede almacenar la siguiente información localmente en el dispositivo:
 
@@ -29,7 +29,7 @@ La aplicación puede almacenar la siguiente información localmente en el dispos
 
 Esta información no se envía a mi propio servidor. Los datos locales se pueden eliminar borrando la aplicación o limpiando sus datos.
 
-## 4. Créditos de sonido
+## 3. Créditos de sonido
 
 Los sonidos utilizados en la aplicación proceden de Pixabay y están sujetos a la [Licencia de contenido de Pixabay](https://pixabay.com/service/license-summary/):
 
@@ -38,7 +38,7 @@ Los sonidos utilizados en la aplicación proceden de Pixabay y están sujetos a 
 - Sonido de transición: [Base de transición con efectos especiales de cine](https://pixabay.com/sound-effects/film-special-effects-transition-base-121422/)
 - Sonido de error: [Efectos especiales de cine: programa de entrenamiento incorrecto](https://pixabay.com/sound-effects/film-special-effects-training-program-incorrect1-88736/)
 
-## 5. Publicidad de Google AdMob
+## 4. Publicidad de Google AdMob
 
 La aplicación muestra anuncios proporcionados por Google AdMob. Para ofrecer, medir y proteger los servicios publicitarios, Google y sus socios publicitarios pueden tratar información técnica como:
 
@@ -55,7 +55,7 @@ Más información:
 - [Política de privacidad de Google](https://policies.google.com/privacy)
 - [Google AdMob](https://support.google.com/admob/)
 
-## 6. Plataforma de mensajería para usuarios de Google (UMP)
+## 5. Plataforma de mensajería para usuarios de Google (UMP)
 
 La aplicación utiliza la Plataforma de mensajería para usuarios de Google (UMP) para gestionar las opciones de privacidad relacionadas con la publicidad.
 
@@ -63,7 +63,7 @@ Para los usuarios del Espacio Económico Europeo, el Reino Unido y Suiza, la UMP
 
 Los ajustes de privacidad están disponibles en **Información / Opciones de privacidad** de la aplicación cuando la UMP determina que es necesario un punto de acceso a las opciones de privacidad.
 
-## 7. Firebase Crashlytics
+## 6. Firebase Crashlytics
 
 La aplicación utiliza Firebase Crashlytics para detectar, investigar y solucionar fallos y otros problemas técnicos.
 
@@ -81,36 +81,36 @@ Hay más información disponible en la [documentación de privacidad y seguridad
 
 Google, Firebase y los demás proveedores de servicios externos utilizados por la aplicación ofrecen una protección de datos idéntica o equivalente a la descrita en la presente Política de privacidad, según sea aplicable a sus servicios.
 
-## 8. IDFA y «App Tracking Transparency»
+## 7. IDFA y «App Tracking Transparency»
 
 Actualmente, la aplicación no solicita el permiso de «App Tracking Transparency» (ATT) ni pide acceso al identificador publicitario IDFA de Apple.
 
 Si esto cambiara en el futuro, se actualizarán esta Política de privacidad y la información sobre privacidad de la tienda de aplicaciones.
 
-## 9. Conservación de datos
+## 8. Conservación de datos
 
 La información almacenada localmente por la aplicación permanece en el dispositivo hasta que el usuario la elimine, desinstale la aplicación o borre los datos de la misma.
 
 Google AdMob y Firebase Crashlytics procesan y conservan la información de acuerdo con sus propias políticas de privacidad, seguridad y conservación de datos. Según Firebase, Crashlytics conserva determinados datos sobre fallos e identificadores durante 90 días.
 
-## 10. Seguridad de los datos
+## 9. Seguridad de los datos
 
 La comunicación de red utiliza protocolos seguros compatibles con los servicios pertinentes. Los responsables del tratamiento de datos pertinentes aplican medidas técnicas y organizativas razonables para proteger los datos.
 
-## 11. Tus derechos
+## 10. Tus derechos
 
 Con sujeción a la legislación aplicable, puedes solicitar el acceso a los datos personales que te conciernen, la rectificación o supresión de los datos, la limitación del tratamiento, la oposición al tratamiento, la retirada del consentimiento e información sobre el tratamiento de datos.
 
 Las solicitudes pueden enviarse utilizando los datos de contacto del responsable del tratamiento indicados anteriormente. Las reclamaciones pueden presentarse ante la autoridad de protección de datos competente de su país de residencia o de su ubicación.
 
-## 12. Menores
+## 11. Menores
 
 La aplicación no está dirigida a menores y no recopila deliberadamente información personal de menores.
 
-## 13. Modificaciones de esta política
+## 12. Modificaciones de esta política
 
 Puedo actualizar esta Política de privacidad cuando se introduzca una nueva función, un SDK o una práctica de tratamiento de datos. La última versión mostrará una nueva fecha de «Última actualización».
 
-## 14. Contacto
+## 13. Contacto
 
 Para cualquier consulta sobre privacidad, utiliza los datos de contacto del responsable del tratamiento que figuran más arriba.

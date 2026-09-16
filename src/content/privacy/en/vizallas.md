@@ -12,13 +12,13 @@ name_label: "Name"
 email_label: "Email"
 ---
 
-## 2. About the app
+## 1. About the app
 
 Vízállás displays current water-level information for rivers and lakes in Hungary, together with related news.
 
 The app does not require an account, registration, name, phone number, or email address. The app does not operate its own user-account or application backend.
 
-## 3. Data stored locally
+## 2. Data stored locally
 
 The app may store the following information locally on the device:
 
@@ -29,7 +29,7 @@ The app may store the following information locally on the device:
 
 This information is not sent to my own server. Local data can be removed by deleting the app or clearing its app data.
 
-## 4. External data sources and network connections
+## 3. External data sources and network connections
 
 The app may retrieve data from external services, including:
 
@@ -39,7 +39,7 @@ The app may retrieve data from external services, including:
 
 Some app features may open external websites. Those services operate under their own privacy policies and are responsible for their own data processing.
 
-## 5. Google AdMob advertising
+## 4. Google AdMob advertising
 
 The app displays advertisements provided by Google AdMob. To serve, measure, and protect advertising services, Google and its advertising partners may process technical information such as:
 
@@ -56,7 +56,7 @@ More information:
 - [Google Privacy Policy](https://policies.google.com/privacy)
 - [Google AdMob](https://support.google.com/admob/)
 
-## 6. Google User Messaging Platform (UMP)
+## 5. Google User Messaging Platform (UMP)
 
 The app uses Google User Messaging Platform (UMP) to manage privacy choices related to advertising.
 
@@ -64,7 +64,7 @@ For users in the European Economic Area, the United Kingdom, and Switzerland, UM
 
 Privacy settings are available from **Info / Privacy options** in the app when UMP determines that a privacy-options entry point is required.
 
-## 7. Firebase Crashlytics
+## 6. Firebase Crashlytics
 
 The app uses Firebase Crashlytics to detect, investigate, and fix crashes and other technical problems.
 
@@ -84,23 +84,23 @@ Google, Firebase, and the other third-party service providers used by the app pr
 protection that is the same as or equivalent to the protection described in this Privacy Policy,
 as applicable to their services.
 
-## 8. IDFA and App Tracking Transparency
+## 7. IDFA and App Tracking Transparency
 
 The app currently does not request App Tracking Transparency (ATT) permission and does not request access to Apple’s IDFA advertising identifier.
 
 If this changes in the future, this Privacy Policy and the app-store privacy disclosures will be updated.
 
-## 9. Data retention
+## 8. Data retention
 
 Information stored locally by the app remains on the device until the user deletes it, removes the app, or clears the app’s data.
 
 Google AdMob and Firebase Crashlytics process and retain information according to their own privacy, security, and retention policies. According to Firebase, Crashlytics retains certain crash and identifier data for 90 days.
 
-## 10. Data security
+## 9. Data security
 
 Network communication between the app and external data sources uses secure protocols supported by those services. The relevant data controllers apply reasonable technical and organizational measures to protect data.
 
-## 11. Your rights
+## 10. Your rights
 
 Subject to applicable law, you may request:
 
@@ -115,14 +115,14 @@ Requests may be sent using the controller contact details listed above.
 
 Advertising consent and opt-out preferences can be managed through the app’s privacy settings. Complaints may be submitted to the data-protection authority in your country of residence or location. For users in Hungary, this is the Hungarian National Authority for Data Protection and Freedom of Information (NAIH).
 
-## 12. Children
+## 11. Children
 
 The app is not directed at children and does not knowingly collect personal information from children.
 
-## 13. Changes to this policy
+## 12. Changes to this policy
 
 I may update this Privacy Policy when introducing a new feature, SDK, or data-processing practice. The latest version will show a new “Last updated” date.
 
-## 14. Contact
+## 13. Contact
 
 For privacy questions, use the controller contact details listed above.

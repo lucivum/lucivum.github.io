@@ -1,6 +1,14 @@
 import { getCollection } from 'astro:content';
 
-import { DEFAULT_LANGUAGE, appOf, homePath, languageOf, privacyPath } from '../config/routes';
+import { appResourcesFor } from '../config/resources';
+import {
+  DEFAULT_LANGUAGE,
+  appOf,
+  homePath,
+  languageOf,
+  privacyPath,
+  resourcesPath,
+} from '../config/routes';
 import { site } from '../config/site';
 
 export interface Alternate {
@@ -53,6 +61,16 @@ export async function privacyAlternates(id: string): Promise<Hreflang> {
   const alternates = policies
     .filter((policy) => appOf(policy.id) === app)
     .map((policy) => ({ code: languageOf(policy.id), url: privacyPath(policy.id) }))
+    .sort(byLanguageOrder);
+
+  return { alternates, xDefaultUrl: xDefaultUrl(alternates) };
+}
+
+/** Every language the given app's resource page exists in. */
+export function resourcesAlternates(app: string): Hreflang {
+  const languages = appResourcesFor(app)?.languages ?? [];
+  const alternates = languages
+    .map((code) => ({ code, url: resourcesPath(app, code) }))
     .sort(byLanguageOrder);
 
   return { alternates, xDefaultUrl: xDefaultUrl(alternates) };

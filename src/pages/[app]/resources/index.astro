@@ -1,0 +1,20 @@
+---
+import ResourcesPage from '../../../layouts/ResourcesPage.astro';
+import { DEFAULT_LANGUAGE } from '../../../config/routes';
+import { appResources, type AppResources } from '../../../config/resources';
+import type { LanguageCode } from '../../../config/site';
+
+export function getStaticPaths() {
+  return appResources
+    .filter((entry) => entry.languages.includes(DEFAULT_LANGUAGE))
+    .map((entry) => ({
+      params: { app: entry.app },
+      props: { entry, language: DEFAULT_LANGUAGE },
+    }));
+}
+
+// Astro widens the literal language back to `string` on its way through getStaticPaths.
+const { entry, language } = Astro.props as { entry: AppResources; language: LanguageCode };
+---
+
+<ResourcesPage entry={entry} language={language} />

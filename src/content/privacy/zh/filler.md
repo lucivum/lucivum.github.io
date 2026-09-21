@@ -4,7 +4,7 @@ description: "The Filler 应用的隐私政策。"
 language: "zh-CN"
 theme_color: "#081722"
 effective_date: "2026年9月17日"
-last_updated: "2026年9月17日"
+last_updated: "2026年9月21日"
 effective_date_label: "生效日期"
 last_updated_label: "最后更新"
 controller_title: "数据控制者"
@@ -31,16 +31,7 @@ email_label: "电子邮箱"
 
 应用启动时会读取设备的语言设置，以便在存在翻译的情况下以该语言显示游戏内容。该设置不会被应用存储，也不会被发送至任何地方。
 
-## 3. 音效来源
-
-本应用中使用的音效来自 Pixabay，遵循 [Pixabay 内容许可协议](https://pixabay.com/service/license-summary/)：
-
-- 关卡通关：[电影特效旋转通关音效](https://pixabay.com/sound-effects/film-special-effects-spin-complete-295086/)
-- 关卡失败：[电影特效负片蜂鸣音](https://pixabay.com/sound-effects/film-special-effects-negative-beeps-6008/)
-- 点击声：[电影特效 电脑鼠标点击声 02](https://pixabay.com/sound-effects/film-special-effects-computer-mouse-click-02-383961/)
-- 球体爆裂：[电影特效错误/失误音效（错误答案）](https://pixabay.com/sound-effects/film-special-effects-error-mistake-sound-effect-incorrect-answer-437420/)
-
-## 4. Google AdMob 广告
+## 3. Google AdMob 广告
 
 本应用会展示由 Google AdMob 提供的广告。为了提供、衡量和保护广告服务，Google 及其广告合作伙伴可能会处理以下技术信息：
 
@@ -57,7 +48,7 @@ email_label: "电子邮箱"
 - [Google 隐私政策](https://policies.google.com/privacy)
 - [Google AdMob](https://support.google.com/admob/)
 
-## 5. Google 用户消息平台 (UMP)
+## 4. Google 用户消息平台 (UMP)
 
 该应用使用 Google 用户消息平台 (UMP) 来管理与广告相关的隐私选项。
 
@@ -65,7 +56,7 @@ email_label: "电子邮箱"
 
 当 UMP 确定需要提供隐私选项入口时，用户可通过应用中的 **“信息/隐私选项”** 访问隐私设置。
 
-## 6. Firebase Crashlytics
+## 5. Firebase Crashlytics
 
 本应用使用 Firebase Crashlytics 来发现、排查和修复崩溃及其他技术问题。
 
@@ -83,36 +74,36 @@ Crashlytics 可能处理的信息包括：
 
 在适用于其服务的范围内，Google 以及本应用使用的其他第三方服务商提供与本隐私政策所述相同或同等的数据保护。
 
-## 7. IDFA 与应用追踪透明度
+## 6. IDFA 与应用追踪透明度
 
 该应用目前不会请求“应用追踪透明度”（ATT）权限，也不会请求访问 Apple 的 IDFA 广告标识符。
 
 如果未来情况发生变化，本《隐私政策》以及应用商店中的隐私声明将相应更新。
 
-## 8. 数据保留
+## 7. 数据保留
 
 本应用本地存储的信息将保留在设备上，直至用户将其删除、卸载应用或清除应用数据。
 
 Google AdMob 和 Firebase Crashlytics 根据各自的隐私、安全和数据保留政策处理并保留信息。根据 Firebase 的规定，Crashlytics 会将某些崩溃和标识符数据保留 90 天。
 
-## 9. 数据安全
+## 8. 数据安全
 
 网络通信采用相关服务支持的安全协议。相关数据控制者采取合理的技术和组织措施来保护数据。
 
-## 10. 您的权利
+## 9. 您的权利
 
 在适用法律允许的范围内，您可以要求访问与您相关的个人数据、更正或删除数据、限制处理、反对处理、撤回同意，以及获取有关数据处理的信息。
 
 您可通过上述数据控制者的联系方式提交请求。如需投诉，可向您居住地或所在地的相关数据保护机构提出。
 
-## 11. 儿童
+## 10. 儿童
 
 本应用不面向儿童，且不会在知情情况下收集儿童的个人信息。
 
-## 12. 本政策的变更
+## 11. 本政策的变更
 
 当推出新功能、SDK 或数据处理实践时，我可能会更新本《隐私政策》。最新版本将显示新的“最后更新”日期。
 
-## 13. 联系方式
+## 12. 联系方式
 
 如有隐私相关问题，请使用上文列出的数据控制者联系方式。

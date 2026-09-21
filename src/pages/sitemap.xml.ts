@@ -5,7 +5,8 @@ import { join } from 'node:path';
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
-import { homePath, privacyPath } from '../config/routes';
+import { appResources } from '../config/resources';
+import { homePath, privacyPath, resourcesPath } from '../config/routes';
 import { absolute } from '../config/site';
 
 // `astro build` runs from the project root, so resolve content files from there
@@ -52,6 +53,15 @@ function lastModified(collection: string, id: string): Date {
   }
 }
 
+/**
+ * Resource pages are built from `src/config/resources.ts` rather than from a content file
+ * per page, so they all share one date: when that data last changed.
+ */
+function resourcesLastModified(): Date {
+  const file = join(projectRoot, 'src', 'config', 'resources.ts');
+  return gitCommitDate(file) ?? new Date();
+}
+
 function isoDate(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
@@ -62,6 +72,8 @@ export const GET: APIRoute = async () => {
     getCollection('privacy'),
   ]);
 
+  const resourcesDate = resourcesLastModified();
+
   const urls = [
     ...homePages.map((page) => ({
       loc: absolute(homePath(page.id)),
@@ -71,6 +83,12 @@ export const GET: APIRoute = async () => {
       loc: absolute(privacyPath(policy.id)),
       lastmod: lastModified('privacy', policy.id),
     })),
+    ...appResources.flatMap((entry) =>
+      entry.languages.map((language) => ({
+        loc: absolute(resourcesPath(entry.app, language)),
+        lastmod: resourcesDate,
+      })),
+    ),
   ].sort((a, b) => b.lastmod.getTime() - a.lastmod.getTime());
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>

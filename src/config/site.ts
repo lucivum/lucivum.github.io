@@ -90,6 +90,9 @@ export const site = {
   },
 } as const;
 
+/** Every language code the site offers, so a typo cannot reach a page. */
+export type LanguageCode = (typeof site.languageOptions)[number]['code'];
+
 /** Absolute URL for a root-relative path. */
 export function absolute(path: string): string {
   return new URL(path, `${site.url}/`).href;

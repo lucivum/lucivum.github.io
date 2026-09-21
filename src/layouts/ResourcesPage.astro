@@ -1,0 +1,138 @@
+---
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import BaseLayout from './BaseLayout.astro';
+import { privacyPath, resourcesPath } from '../config/routes';
+import type { AppResources } from '../config/resources';
+import {
+  APACHE_LICENSE_URL,
+  MATERIAL_ICONS_URL,
+  OFL_URL,
+  PIXABAY_LICENSE_URL,
+  resourceText,
+  waterResourceText,
+} from '../config/resourceText';
+import type { LanguageCode } from '../config/site';
+import { resourcesAlternates } from '../lib/hreflang';
+
+interface Props {
+  entry: AppResources;
+  language: LanguageCode;
+}
+
+const { entry, language } = Astro.props;
+const text = resourceText[language];
+
+// Only Vízállás reads live data, and only in the two languages it ships in.
+const water =
+  entry.dataSources && (language === 'en' || language === 'hu')
+    ? waterResourceText[language]
+    : undefined;
+
+const title = `${entry.name} – ${text.heading}`;
+const description = text.descriptionTemplate.replace('{app}', entry.name);
+const { alternates, xDefaultUrl } = resourcesAlternates(entry.app);
+---
+
+<BaseLayout
+    title={title}
+    description={description}
+    language={text.language}
+    languageCode={language}
+    path={resourcesPath(entry.app, language)}
+    alternateLanguages={alternates}
+    xDefaultUrl={xDefaultUrl}
+    themeColor={entry.themeColor}
+>
+    <div class:list={["page", "resources-page", { "has-switcher": alternates.length > 1 }]}>
+        <LanguageSwitcher items={alternates} />
+
+        <h1>{title}</h1>
+
+        {water && entry.dataSources && (
+        <section>
+            <h2>{water.dataHeading}</h2>
+            <p>{water.dataIntro}</p>
+            <ul class="resource-list">
+                {entry.dataSources.map((source) => (
+                <li>
+                    <span class="resource-use">{water.useLabels[source.use]}</span>
+                    <a href={source.url} rel="noopener">{source.name}</a>
+                </li>
+                ))}
+            </ul>
+        </section>
+        )}
+
+        {entry.sounds && (
+        <section>
+            <h2>{text.soundsHeading}</h2>
+            <p>{text.soundsIntro}</p>
+            <ul class="resource-list">
+                {entry.sounds.map((sound) => (
+                <li>
+                    <span class="resource-use">{text.useLabels[sound.use]}</span>
+                    <a href={sound.url} rel="noopener">{sound.title}</a>
+                </li>
+                ))}
+            </ul>
+            <p class="resource-license">
+                {text.licenseLabel}{text.colon}<a href={PIXABAY_LICENSE_URL} rel="noopener">{text.pixabayLicense}</a>
+            </p>
+        </section>
+        )}
+
+        {entry.usesMaterialIcons && (
+        <section>
+            <h2>{text.iconsHeading}</h2>
+            <p><a href={MATERIAL_ICONS_URL} rel="noopener">{text.iconsText}</a></p>
+            <p class="resource-license">
+                {text.licenseLabel}{text.colon}<a href={APACHE_LICENSE_URL} rel="noopener">{text.apacheLicense}</a>
+            </p>
+        </section>
+        )}
+
+        {entry.fonts && (
+        <section>
+            <h2>{text.fontHeading}</h2>
+            <p>{text.fontsIntro}</p>
+            <ul class="resource-list">
+                {entry.fonts.map((font) => (
+                <li>
+                    <a href={font.url} rel="noopener">{font.name}</a>
+                    <span class="resource-note">{font.copyright}</span>
+                </li>
+                ))}
+            </ul>
+            <p class="resource-license">
+                {text.licenseLabel}{text.colon}<a href={OFL_URL} rel="noopener">{text.oflLicense}</a>
+            </p>
+        </section>
+        )}
+
+        {entry.usesSystemFont && (
+        <section>
+            <h2>{text.fontHeading}</h2>
+            <p>{text.fontText}</p>
+        </section>
+        )}
+
+        {entry.graphicsTool && (
+        <section>
+            <h2>{text.graphicsHeading}</h2>
+            <p>{text.graphicsText}</p>
+            <p class="resource-license">{text.toolLabel}{text.colon}{entry.graphicsTool}</p>
+        </section>
+        )}
+
+        {water && entry.hasDataDisclaimer && (
+        <section class="resource-disclaimer">
+            <h2>{water.disclaimerHeading}</h2>
+            <p>{water.disclaimerText}</p>
+        </section>
+        )}
+
+        <p class="page-crosslink">
+            <a href={privacyPath(`${language}/${entry.app}`)}>{text.privacyLink}</a>
+        </p>
+    </div>
+</BaseLayout>

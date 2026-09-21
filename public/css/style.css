@@ -354,3 +354,64 @@ body:has(#not-found) h3 {
         padding-top: 68px;
     }
 }
+
+/* Resource pages: one labelled line per credited work, so the name of the work stays
+   readable as a link while what the app uses it for reads as a caption above it. */
+.resources-page.has-switcher {
+    padding-top: 88px;
+}
+
+@media (max-width: 560px) {
+    .resources-page.has-switcher {
+        padding-top: 68px;
+    }
+}
+
+.resource-list {
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+}
+
+.resource-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.resource-list li:first-child {
+    border-top: 1px solid var(--line);
+}
+
+.resource-use {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+/* A caption under a credited work, where the label follows the name rather than
+   preceding it — a font is known by its name, not by what it is used for. */
+.resource-note {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.resource-license {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* The water-level caveat is the one section a reader must not skim past. */
+.resource-disclaimer {
+    margin: 46px 0;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+/* Link between an app's two pages, in either direction. */
+.page-crosslink {
+    margin-top: 46px;
+}

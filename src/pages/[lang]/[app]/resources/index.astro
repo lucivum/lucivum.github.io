@@ -1,0 +1,21 @@
+---
+import ResourcesPage from '../../../../layouts/ResourcesPage.astro';
+import { DEFAULT_LANGUAGE } from '../../../../config/routes';
+import { appResources } from '../../../../config/resources';
+
+export function getStaticPaths() {
+  // The default language lives at /<app>/resources/ via src/pages/[app]/resources/.
+  return appResources.flatMap((entry) =>
+    entry.languages
+      .filter((language) => language !== DEFAULT_LANGUAGE)
+      .map((language) => ({
+        params: { lang: language, app: entry.app },
+        props: { entry, language },
+      })),
+  );
+}
+
+const { entry, language } = Astro.props;
+---
+
+<ResourcesPage entry={entry} language={language} />

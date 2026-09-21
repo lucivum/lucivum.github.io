@@ -4,7 +4,10 @@ import { render, type CollectionEntry } from 'astro:content';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import BaseLayout from './BaseLayout.astro';
 import { site } from '../config/site';
-import { languageOf, privacyPath } from '../config/routes';
+import { appOf, languageOf, privacyPath, resourcesPath } from '../config/routes';
+import { appResourcesFor } from '../config/resources';
+import { resourceText } from '../config/resourceText';
+import type { LanguageCode } from '../config/site';
 import { privacyAlternates } from '../lib/hreflang';
 
 interface Props {
@@ -15,6 +18,12 @@ const { entry } = Astro.props;
 const data = entry.data;
 const { Content } = await render(entry);
 const { alternates, xDefaultUrl } = await privacyAlternates(entry.id);
+
+const app = appOf(entry.id);
+const language = languageOf(entry.id) as LanguageCode;
+// Linked only where that page exists, so a policy added in a language the resource
+// list does not cover yet cannot produce a dead link.
+const hasResources = appResourcesFor(app)?.languages.includes(language) ?? false;
 ---
 
 <BaseLayout
@@ -44,5 +53,11 @@ const { alternates, xDefaultUrl } = await privacyAlternates(entry.id);
         </section>
 
         <Content />
+
+        {hasResources && (
+        <p class="page-crosslink">
+            <a href={resourcesPath(app, language)}>{resourceText[language].heading}</a>
+        </p>
+        )}
     </div>
 </BaseLayout>

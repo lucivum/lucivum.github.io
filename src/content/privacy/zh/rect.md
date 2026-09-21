@@ -4,7 +4,7 @@ description: "Rectangle 应用的隐私政策。"
 language: "zh-CN"
 theme_color: "#f4f6f5"
 effective_date: "2026年8月19日"
-last_updated: "2026年9月4日"
+last_updated: "2026年9月21日"
 effective_date_label: "生效日期"
 last_updated_label: "最后更新"
 controller_title: "数据控制者"
@@ -29,16 +29,7 @@ email_label: "电子邮箱"
 
 这些信息不会发送至我的服务器。通过卸载应用或清除应用数据，即可删除本地数据。
 
-## 3. 音效来源
-
-本应用中使用的音效来自 Pixabay，遵循 [Pixabay 内容许可协议](https://pixabay.com/service/license-summary/)：
-
-- 背景音乐：[舒缓吉他循环音乐 v5](https://pixabay.com/sound-effects/musical-relaxing-guitar-loop-v5-245859/)
-- 点击音效：[电影特效点击通知音](https://pixabay.com/sound-effects/film-special-effects-tap-notification-180637/)
-- 过渡音效：[电影特效过渡音效基础版](https://pixabay.com/sound-effects/film-special-effects-transition-base-121422/)
-- 错误音效：[电影特效 训练程序错误](https://pixabay.com/sound-effects/film-special-effects-training-program-incorrect1-88736/)
-
-## 4. Google AdMob 广告
+## 3. Google AdMob 广告
 
 本应用会展示由 Google AdMob 提供的广告。为了提供、衡量和保护广告服务，Google 及其广告合作伙伴可能会处理以下技术信息：
 
@@ -55,7 +46,7 @@ email_label: "电子邮箱"
 - [Google 隐私政策](https://policies.google.com/privacy)
 - [Google AdMob](https://support.google.com/admob/)
 
-## 5. Google 用户消息平台 (UMP)
+## 4. Google 用户消息平台 (UMP)
 
 该应用使用 Google 用户消息平台 (UMP) 来管理与广告相关的隐私选项。
 
@@ -63,7 +54,7 @@ email_label: "电子邮箱"
 
 当 UMP 确定需要提供隐私选项入口时，用户可通过应用中的 **“信息/隐私选项”** 访问隐私设置。
 
-## 6. Firebase Crashlytics
+## 5. Firebase Crashlytics
 
 该应用使用 Firebase Crashlytics 来检测、调查和修复崩溃及其他技术问题。
 
@@ -81,36 +72,36 @@ Crashlytics 可能会处理以下信息（包括但不限于）：
 
 Google、Firebase 以及本应用使用的其他第三方服务提供商，均提供与其服务适用范围相符、与本《隐私政策》所述保护措施相同或等效的数据保护措施。
 
-## 7. IDFA 与应用追踪透明度
+## 6. IDFA 与应用追踪透明度
 
 该应用目前不会请求“应用追踪透明度”（ATT）权限，也不会请求访问 Apple 的 IDFA 广告标识符。
 
 如果未来情况发生变化，本《隐私政策》以及应用商店中的隐私声明将相应更新。
 
-## 8. 数据保留
+## 7. 数据保留
 
 本应用本地存储的信息将保留在设备上，直至用户将其删除、卸载应用或清除应用数据。
 
 Google AdMob 和 Firebase Crashlytics 根据各自的隐私、安全和数据保留政策处理并保留信息。根据 Firebase 的规定，Crashlytics 会将某些崩溃和标识符数据保留 90 天。
 
-## 9. 数据安全
+## 8. 数据安全
 
 网络通信采用相关服务支持的安全协议。相关数据控制者采取合理的技术和组织措施来保护数据。
 
-## 10. 您的权利
+## 9. 您的权利
 
 在适用法律允许的范围内，您可以要求访问与您相关的个人数据、更正或删除数据、限制处理、反对处理、撤回同意，以及获取有关数据处理的信息。
 
 您可通过上述数据控制者的联系方式提交请求。如需投诉，可向您居住地或所在地的相关数据保护机构提出。
 
-## 11. 儿童
+## 10. 儿童
 
 本应用不面向儿童，且不会在知情情况下收集儿童的个人信息。
 
-## 12. 本政策的变更
+## 11. 本政策的变更
 
 当推出新功能、SDK 或数据处理实践时，我可能会更新本《隐私政策》。最新版本将显示新的“最后更新”日期。
 
-## 13. 联系方式
+## 12. 联系方式
 
 如有隐私相关问题，请使用上文列出的数据控制者联系方式。

@@ -4,7 +4,7 @@ description: "Política de privacidad de la aplicación Dhess."
 language: "es-ES"
 theme_color: "#f4f6f5"
 effective_date: "16 de septiembre de 2026"
-last_updated: "16 de septiembre de 2026"
+last_updated: "21 de septiembre de 2026"
 effective_date_label: "Fecha de entrada en vigor"
 last_updated_label: "Última actualización"
 controller_title: "Responsable del tratamiento"
@@ -32,15 +32,7 @@ La aplicación puede almacenar la siguiente información localmente en el dispos
 
 Esta información no se envía a mi propio servidor. Los datos locales se pueden eliminar borrando la aplicación o limpiando sus datos.
 
-## 3. Créditos de sonido
-
-Los sonidos utilizados en la aplicación proceden de Pixabay, bajo la [Licencia de contenido de Pixabay](https://pixabay.com/service/license-summary/):
-
-- Sonido de movimiento: [Golpe en una puerta de madera doméstica](https://pixabay.com/sound-effects/household-wood-door-knock-106669/)
-- Sonido de finalización: [Tintineo musical digital de éxito](https://pixabay.com/sound-effects/musical-digital-success-chime-futuristic-ui-notification-sfx-562086/)
-- Sonido de error: [Programa de entrenamiento de efectos especiales cinematográficos incorrecto](https://pixabay.com/sound-effects/film-special-effects-training-program-incorrect1-88736/)
-
-## 4. Publicidad de Google AdMob
+## 3. Publicidad de Google AdMob
 
 La aplicación muestra anuncios proporcionados por Google AdMob: un banner en la lista de niveles y anuncios con recompensa que el jugador puede decidir ver para obtener créditos adicionales. Ver un anuncio con recompensa siempre es opcional. Para ofrecer, medir y proteger los servicios publicitarios, Google y sus socios publicitarios pueden tratar información técnica como:
 
@@ -57,7 +49,7 @@ Más información:
 - [Política de privacidad de Google](https://policies.google.com/privacy)
 - [Google AdMob](https://support.google.com/admob/)
 
-## 5. Plataforma de mensajería para usuarios de Google (UMP)
+## 4. Plataforma de mensajería para usuarios de Google (UMP)
 
 La aplicación utiliza la Plataforma de mensajería para usuarios de Google (UMP) para gestionar las opciones de privacidad relacionadas con la publicidad.
 
@@ -65,7 +57,7 @@ Para los usuarios del Espacio Económico Europeo, el Reino Unido y Suiza, la UMP
 
 Los ajustes de privacidad están disponibles en **Información / Opciones de privacidad** de la aplicación cuando la UMP determina que es necesario un punto de acceso a las opciones de privacidad.
 
-## 6. Firebase Crashlytics
+## 5. Firebase Crashlytics
 
 La aplicación utiliza Firebase Crashlytics para detectar, investigar y solucionar fallos y otros problemas técnicos.
 
@@ -83,36 +75,36 @@ Hay más información disponible en la [documentación de privacidad y seguridad
 
 Google, Firebase y los demás proveedores de servicios externos utilizados por la aplicación ofrecen una protección de datos idéntica o equivalente a la descrita en la presente Política de privacidad, según sea aplicable a sus servicios.
 
-## 7. IDFA y «App Tracking Transparency»
+## 6. IDFA y «App Tracking Transparency»
 
 Actualmente, la aplicación no solicita el permiso de «App Tracking Transparency» (ATT) ni pide acceso al identificador publicitario IDFA de Apple.
 
 Si esto cambiara en el futuro, se actualizarán esta Política de privacidad y la información sobre privacidad de la tienda de aplicaciones.
 
-## 8. Conservación de datos
+## 7. Conservación de datos
 
 La información almacenada localmente por la aplicación permanece en el dispositivo hasta que el usuario la elimine, desinstale la aplicación o borre los datos de la misma.
 
 Google AdMob y Firebase Crashlytics procesan y conservan la información de acuerdo con sus propias políticas de privacidad, seguridad y conservación de datos. Según Firebase, Crashlytics conserva determinados datos sobre fallos e identificadores durante 90 días.
 
-## 9. Seguridad de los datos
+## 8. Seguridad de los datos
 
 La comunicación de red utiliza protocolos seguros compatibles con los servicios pertinentes. Los responsables del tratamiento de datos pertinentes aplican medidas técnicas y organizativas razonables para proteger los datos.
 
-## 10. Tus derechos
+## 9. Tus derechos
 
 Con sujeción a la legislación aplicable, puedes solicitar el acceso a los datos personales que te conciernen, la rectificación o supresión de los datos, la limitación del tratamiento, la oposición al tratamiento, la retirada del consentimiento e información sobre el tratamiento de datos.
 
 Las solicitudes pueden enviarse utilizando los datos de contacto del responsable del tratamiento indicados anteriormente. Las reclamaciones pueden presentarse ante la autoridad de protección de datos competente de su país de residencia o de su ubicación.
 
-## 11. Menores
+## 10. Menores
 
 La aplicación no está dirigida a menores y no recopila deliberadamente información personal de menores.
 
-## 12. Modificaciones de esta política
+## 11. Modificaciones de esta política
 
 Puedo actualizar esta Política de privacidad cuando se introduzca una nueva función, un SDK o una práctica de tratamiento de datos. La última versión mostrará una nueva fecha de «Última actualización».
 
-## 13. Contacto
+## 12. Contacto
 
 Para cualquier consulta sobre privacidad, utiliza los datos de contacto del responsable del tratamiento que figuran más arriba.

@@ -4,7 +4,7 @@ description: "Privacy Policy for the Vízállás application."
 language: "en-US"
 theme_color: "#f4f6f5"
 effective_date: "August 18, 2026"
-last_updated: "September 16, 2026"
+last_updated: "September 23, 2026"
 effective_date_label: "Effective date"
 last_updated_label: "Last updated"
 controller_title: "Data controller"
@@ -86,9 +86,11 @@ as applicable to their services.
 
 ## 7. IDFA and App Tracking Transparency
 
-The app currently does not request App Tracking Transparency (ATT) permission and does not request access to Apple’s IDFA advertising identifier.
+On iOS, the app asks for permission through Apple’s App Tracking Transparency (ATT) framework before the advertising identifier (IDFA) may be used. The request appears once advertising is being set up, and the answer can be changed at any time in iOS Settings under Privacy & Security → Tracking.
 
-If this changes in the future, this Privacy Policy and the app-store privacy disclosures will be updated.
+If permission is given, advertising may use the identifier to personalise the ads shown. If it is refused — or if tracking requests are turned off for all apps — advertising still appears, but is not personalised, and the identifier is not used.
+
+Android has no equivalent prompt. There the advertising identifier is governed by the consent choices described above and by the device’s own advertising settings.
 
 ## 8. Data retention
 

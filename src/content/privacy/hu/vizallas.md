@@ -4,7 +4,7 @@ description: "A Vízállás alkalmazás adatvédelmi tájékoztatója."
 language: "hu-HU"
 theme_color: "#f4f6f5"
 effective_date: "2026. augusztus 18."
-last_updated: "2026. szeptember 16."
+last_updated: "2026. szeptember 23."
 effective_date_label: "Hatálybalépés"
 last_updated_label: "Utolsó frissítés"
 controller_title: "Az adatkezelő"
@@ -86,9 +86,11 @@ adatvédelmet biztosítanak.
 
 ## 7. IDFA és App Tracking Transparency
 
-Az alkalmazás jelenleg nem kér App Tracking Transparency (ATT) engedélyt, és nem kér hozzáférést az Apple IDFA reklámazonosítóhoz.
+iOS rendszeren az alkalmazás az Apple App Tracking Transparency (ATT) keretrendszerén keresztül kér engedélyt, mielőtt a reklámazonosító (IDFA) felhasználható lenne. A kérés a hirdetések előkészítésekor jelenik meg, a válasz pedig bármikor módosítható az iOS Beállításokban, az Adatvédelem és biztonság → Nyomon követés menüpontban.
 
-Ha ez a gyakorlat a jövőben megváltozik, jelen tájékoztatót és az alkalmazásboltok adatvédelmi nyilatkozatait frissítjük.
+Ha az engedélyt megadja, a hirdetések az azonosító felhasználásával személyre szabhatók. Ha megtagadja — vagy ha minden alkalmazásnál kikapcsolta a nyomon követési kérelmeket —, a hirdetések továbbra is megjelennek, de nem lesznek személyre szabottak, és az azonosító nem kerül felhasználásra.
+
+Androidon nincs ilyen rendszerszintű kérdés. Ott a reklámazonosító használatát a fent leírt hozzájárulási beállítások és a készülék saját hirdetési beállításai szabályozzák.
 
 ## 8. Adatmegőrzés
 

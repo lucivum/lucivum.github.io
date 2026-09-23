@@ -90,7 +90,7 @@ On iOS, the app asks for permission through Apple’s App Tracking Transparency 
 
 If permission is given, advertising may use the identifier to personalise the ads shown. If it is refused — or if tracking requests are turned off for all apps — advertising still appears, but is not personalised, and the identifier is not used.
 
-Android has no equivalent prompt. There the advertising identifier is governed by the consent choices described above and by the device’s own advertising settings.
+Android has no equivalent prompt. There the advertising identifier is governed by the consent choices described above, and it can be reset or deleted in Android Settings under Privacy → Ads.
 
 ## 8. Data retention
 

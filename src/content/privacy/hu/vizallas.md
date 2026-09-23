@@ -90,7 +90,7 @@ iOS rendszeren az alkalmazás az Apple App Tracking Transparency (ATT) keretrend
 
 Ha az engedélyt megadja, a hirdetések az azonosító felhasználásával személyre szabhatók. Ha megtagadja — vagy ha minden alkalmazásnál kikapcsolta a nyomon követési kérelmeket —, a hirdetések továbbra is megjelennek, de nem lesznek személyre szabottak, és az azonosító nem kerül felhasználásra.
 
-Androidon nincs ilyen rendszerszintű kérdés. Ott a reklámazonosító használatát a fent leírt hozzájárulási beállítások és a készülék saját hirdetési beállításai szabályozzák.
+Androidon nincs ilyen rendszerszintű kérdés. Ott a reklámazonosító használatát a fent leírt hozzájárulási beállítások szabályozzák, maga az azonosító pedig az Android Beállításokban, az Adatvédelem → Hirdetések menüpontban alaphelyzetbe állítható vagy törölhető.
 
 ## 8. Adatmegőrzés
 

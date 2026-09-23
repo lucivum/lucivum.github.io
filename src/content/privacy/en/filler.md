@@ -76,9 +76,11 @@ Google and the other third-party service providers used by the app provide data 
 
 ## 6. IDFA and App Tracking Transparency
 
-The app currently does not request App Tracking Transparency (ATT) permission and does not request access to Apple’s IDFA advertising identifier.
+On iOS, the app asks for permission through Apple’s App Tracking Transparency (ATT) framework before the advertising identifier (IDFA) may be used. The request appears once advertising is being set up, and the answer can be changed at any time in iOS Settings under Privacy & Security → Tracking.
 
-If this changes in the future, this Privacy Policy and the app-store privacy disclosures will be updated.
+If permission is given, advertising may use the identifier to personalise the ads shown. If it is refused — or if tracking requests are turned off for all apps — advertising still appears, but is not personalised, and the identifier is not used.
+
+Android has no equivalent prompt. There the advertising identifier is governed by the consent choices described above, and it can be reset or deleted in Android Settings under Privacy → Ads.
 
 ## 7. Data retention
 

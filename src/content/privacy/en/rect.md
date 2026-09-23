@@ -4,7 +4,7 @@ description: "Privacy Policy for the Rectangle application."
 language: "en-US"
 theme_color: "#f4f6f5"
 effective_date: "August 19, 2026"
-last_updated: "September 21, 2026"
+last_updated: "September 23, 2026"
 effective_date_label: "Effective date"
 last_updated_label: "Last updated"
 controller_title: "Data controller"
@@ -74,9 +74,11 @@ Google, Firebase, and the other third-party service providers used by the app pr
 
 ## 6. IDFA and App Tracking Transparency
 
-The app currently does not request App Tracking Transparency (ATT) permission and does not request access to Apple’s IDFA advertising identifier.
+On iOS, the app asks for permission through Apple’s App Tracking Transparency (ATT) framework before the advertising identifier (IDFA) may be used. The request appears once advertising is being set up, and the answer can be changed at any time in iOS Settings under Privacy & Security → Tracking.
 
-If this changes in the future, this Privacy Policy and the app-store privacy disclosures will be updated.
+If permission is given, advertising may use the identifier to personalise the ads shown. If it is refused — or if tracking requests are turned off for all apps — advertising still appears, but is not personalised, and the identifier is not used.
+
+Android has no equivalent prompt. There the advertising identifier is governed by the consent choices described above, and it can be reset or deleted in Android Settings under Privacy → Ads.
 
 ## 7. Data retention
 

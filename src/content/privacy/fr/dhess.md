@@ -4,7 +4,7 @@ description: "Politique de confidentialité de l’application Dhess."
 language: "fr-FR"
 theme_color: "#f4f6f5"
 effective_date: "16 septembre 2026"
-last_updated: "21 septembre 2026"
+last_updated: "23 septembre 2026"
 effective_date_label: "Date d’entrée en vigueur"
 last_updated_label: "Dernière mise à jour"
 controller_title: "Responsable du traitement"
@@ -77,9 +77,11 @@ Google, Firebase et les autres prestataires de services tiers utilisés par l’
 
 ## 6. IDFA et « App Tracking Transparency »
 
-À l’heure actuelle, l’application ne demande pas l’autorisation « App Tracking Transparency » (ATT) et ne sollicite pas l’accès à l’identifiant publicitaire IDFA d’Apple.
+Sur iOS, l’application demande l’autorisation via le cadre « App Tracking Transparency » (ATT) d’Apple avant de pouvoir utiliser l’identifiant publicitaire (IDFA). La demande s’affiche lors de la configuration de la publicité, et la réponse peut être modifiée à tout moment dans les Réglages iOS, sous Confidentialité et sécurité → Suivi.
 
-Si cela venait à changer à l’avenir, la présente Politique de confidentialité ainsi que les mentions relatives à la confidentialité sur l’App Store seraient mises à jour.
+Si l’autorisation est accordée, la publicité peut utiliser l’identifiant pour personnaliser les publicités affichées. Si elle est refusée — ou si les demandes de suivi sont désactivées pour toutes les applications —, les publicités s’affichent toujours, mais elles ne sont pas personnalisées et l’identifiant n’est pas utilisé.
+
+Android ne propose pas de demande d’autorisation équivalente. Dans ce cas, l’identifiant publicitaire est régi par les choix de consentement décrits ci-dessus, et il peut être réinitialisé ou supprimé dans les Réglages Android, sous Confidentialité → Publicités.
 
 ## 7. Conservation des données
 

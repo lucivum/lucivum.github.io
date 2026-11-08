@@ -1,6 +1,6 @@
 ---
-title: "Contact"
-description: "Coordonnées et politiques de confidentialité des applications Lucivum."
+title: "Applications et contact"
+description: "Applications mobiles de Lucivum, développeur indépendant basé en Hongrie, avec leurs politiques de confidentialité et ses coordonnées."
 language: "fr-FR"
 language_code: "fr"
 home_intro: "Lucivum est un développeur indépendant basé en Hongrie."

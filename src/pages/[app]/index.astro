@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+
+import AppPage from '../../layouts/AppPage.astro';
+import { appOf, isDefaultLanguage } from '../../config/routes';
+
+// Shares its one-segment pattern with src/pages/[lang]/index.astro. Each builds only
+// the paths it lists, and the dev server falls through to the other on a miss, so the
+// two never meet as long as no app is named like a language code.
+export async function getStaticPaths() {
+  const pages = await getCollection('apps');
+  return pages
+    .filter((page) => isDefaultLanguage(page.id))
+    .map((page) => ({ params: { app: appOf(page.id) }, props: { entry: page } }));
+}
+
+const { entry } = Astro.props;
+---
+
+<AppPage entry={entry} />

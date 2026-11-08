@@ -1,5 +1,7 @@
 ---
+import ConsentBanner from '../components/ConsentBanner.astro';
 import Footer from '../components/Footer.astro';
+import { DEFAULT_LANGUAGE } from '../config/routes';
 import { absolute, site } from '../config/site';
 import type { Alternate } from '../lib/hreflang';
 
@@ -17,6 +19,13 @@ interface Props {
   themeColor?: string;
   /** Error pages: no canonical URL to claim, and nothing worth indexing. */
   noindex?: boolean;
+  /**
+   * Root-relative URL of a wide share image (an app's 1024x500 feature graphic). Pages
+   * without one share the square logo.
+   */
+  shareImage?: string;
+  /** schema.org objects for the page, written out as one JSON-LD block. */
+  structuredData?: Record<string, unknown>[];
 }
 
 const {
@@ -29,11 +38,29 @@ const {
   xDefaultUrl,
   themeColor = site.themeColor,
   noindex = false,
+  shareImage,
+  structuredData = [],
 } = Astro.props;
 
 const permalink = absolute(path);
 const fullTitle = `${title} - ${site.name}`;
-const logo = absolute(site.logo);
+const image = absolute(shareImage ?? site.logo);
+
+// Open Graph names the page's language and every translation of it, so a link preview
+// can show the reader's language. Pages without a language code are English-only.
+const pageLanguage = languageCode ?? DEFAULT_LANGUAGE;
+const ogLocaleOf = (code: string) =>
+  site.languageOptions.find((option) => option.code === code)?.ogLocale;
+const ogLocale = ogLocaleOf(pageLanguage);
+const ogLocaleAlternates = alternateLanguages
+  .filter((alternate) => alternate.code !== pageLanguage)
+  .flatMap((alternate) => ogLocaleOf(alternate.code) ?? []);
+
+// `<` is escaped so no string inside the data can close the script element early.
+const jsonLd =
+  structuredData.length > 0
+    ? JSON.stringify({ '@context': 'https://schema.org', '@graph': structuredData }).replace(/</g, '\\u003c')
+    : undefined;
 ---
 
 <!DOCTYPE html>
@@ -42,13 +69,75 @@ const logo = absolute(site.logo);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18429356075"></script>
-    <script is:inline>
+    <!-- The Google Ads tag loads only once the visitor accepts its cookies in the banner
+         (ConsentBanner.astro). Until then nothing is fetched from Google and no event is
+         queued, so a choice made later cannot send what happened before it. -->
+    <script is:inline define:vars={{ tagId: site.ads.tagId, playConversion: site.ads.playClickConversion }}>
+      var STORAGE_KEY = 'lucivum-consent';
+      var GRANTED = { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' };
+      var DENIED = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' };
+
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      window.gtag = gtag;
 
-      gtag('config', 'AW-18429356075');
+      var loaded = false;
+      var granted = false;
+
+      function loadTag() {
+        if (loaded) return;
+        loaded = true;
+        gtag('consent', 'default', DENIED);
+        gtag('consent', 'update', GRANTED);
+        gtag('js', new Date());
+        gtag('config', tagId);
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + tagId;
+        document.head.appendChild(script);
+      }
+
+      // Storage can be unavailable (private windows, blocked site data); the choice then
+      // lasts only for this page, and the banner asks again on the next one.
+      function storedChoice() {
+        try { return localStorage.getItem(STORAGE_KEY); } catch (error) { return null; }
+      }
+
+      window.lucivumConsent = {
+        choice: storedChoice,
+        set: function (choice) {
+          try { localStorage.setItem(STORAGE_KEY, choice); } catch (error) {}
+          granted = choice === 'granted';
+          if (granted) {
+            loadTag();
+          } else if (loaded) {
+            // The tag cannot be unloaded from this page, but it stops setting or reading
+            // its cookies; the next page does not load it at all.
+            gtag('consent', 'update', DENIED);
+          }
+        },
+      };
+
+      if (storedChoice() === 'granted') {
+        granted = true;
+        loadTag();
+      }
+
+      // A click on a Google Play badge leaves the site, so it is sent as a beacon: a normal
+      // request would be cancelled by the navigation it starts.
+      document.addEventListener('click', function (event) {
+        if (!granted) return;
+        var link = event.target instanceof Element && event.target.closest('a[data-play-app]');
+        if (!link) return;
+        gtag('event', 'play_store_click', {
+          app: link.getAttribute('data-play-app'),
+          language: document.documentElement.lang,
+          transport_type: 'beacon',
+        });
+        if (playConversion) {
+          gtag('event', 'conversion', { send_to: playConversion, transport_type: 'beacon' });
+        }
+      });
     </script>
     <meta name="theme-color" content={themeColor}>
 
@@ -70,17 +159,23 @@ const logo = absolute(site.logo);
     <meta property="og:url" content={permalink}>
     <meta property="og:type" content="website">
     <meta property="og:site_name" content={site.name}>
+    {ogLocale && <meta property="og:locale" content={ogLocale}>}
+    {ogLocaleAlternates.map((locale) => (
+        <meta property="og:locale:alternate" content={locale}>
+    ))}
     <meta property="og:title" content={fullTitle}>
     <meta property="og:description" content={description}>
-    <meta property="og:image" content={logo}>
+    <meta property="og:image" content={image}>
 
-    <!-- `summary`, not `summary_large_image`: the share image is a square logo.
-         A large card wants ~1.91:1 and centre-crops anything else. -->
-    <meta name="twitter:card" content="summary">
+    <!-- A large card wants ~1.91:1 and centre-crops anything else, so only a wide
+         share image gets one; the square logo stays a `summary` card. -->
+    <meta name="twitter:card" content={shareImage ? 'summary_large_image' : 'summary'}>
     <meta name="twitter:url" content={permalink}>
     <meta name="twitter:title" content={fullTitle}>
     <meta name="twitter:description" content={description}>
-    <meta name="twitter:image" content={logo}>
+    <meta name="twitter:image" content={image}>
+
+    {jsonLd && <script type="application/ld+json" is:inline set:html={jsonLd} />}
 
     <link rel="stylesheet" href="/css/theme.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -91,6 +186,7 @@ const logo = absolute(site.logo);
     <slot />
     </main>
 
-    <Footer />
+    <Footer language={pageLanguage} />
+    <ConsentBanner language={pageLanguage} />
 </body>
 </html>

@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+
+import AppPage from '../../../layouts/AppPage.astro';
+import { appOf, isDefaultLanguage, languageOf } from '../../../config/routes';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('apps');
+  // Default-language pages live at /<app>/ via src/pages/[app]/index.astro.
+  return pages
+    .filter((page) => !isDefaultLanguage(page.id))
+    .map((page) => ({
+      params: { lang: languageOf(page.id), app: appOf(page.id) },
+      props: { entry: page },
+    }));
+}
+
+const { entry } = Astro.props;
+---
+
+<AppPage entry={entry} />

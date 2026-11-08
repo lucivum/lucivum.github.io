@@ -4,10 +4,12 @@ import { appResourcesFor } from '../config/resources';
 import {
   DEFAULT_LANGUAGE,
   appOf,
+  appPath,
   homePath,
   languageOf,
   privacyPath,
   resourcesPath,
+  sitePrivacyPath,
 } from '../config/routes';
 import { site } from '../config/site';
 
@@ -61,6 +63,28 @@ export async function privacyAlternates(id: string): Promise<Hreflang> {
   const alternates = policies
     .filter((policy) => appOf(policy.id) === app)
     .map((policy) => ({ code: languageOf(policy.id), url: privacyPath(policy.id) }))
+    .sort(byLanguageOrder);
+
+  return { alternates, xDefaultUrl: xDefaultUrl(alternates) };
+}
+
+/** Every language the website's own privacy policy exists in. */
+export async function sitePrivacyAlternates(): Promise<Hreflang> {
+  const pages = await getCollection('sitePrivacy');
+  const alternates = pages
+    .map((page) => ({ code: page.id, url: sitePrivacyPath(page.id) }))
+    .sort(byLanguageOrder);
+
+  return { alternates, xDefaultUrl: xDefaultUrl(alternates) };
+}
+
+/** Every language the given entry's app has a landing page in. */
+export async function appAlternates(id: string): Promise<Hreflang> {
+  const app = appOf(id);
+  const pages = await getCollection('apps');
+  const alternates = pages
+    .filter((page) => appOf(page.id) === app)
+    .map((page) => ({ code: languageOf(page.id), url: appPath(page.id) }))
     .sort(byLanguageOrder);
 
   return { alternates, xDefaultUrl: xDefaultUrl(alternates) };

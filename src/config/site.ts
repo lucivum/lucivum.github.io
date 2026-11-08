@@ -15,10 +15,14 @@ export const site = {
    * `notFound.title` is written without terminal punctuation, because it serves as a
    * heading in one place and as a bold lead-in in another. `fullStop` supplies the
    * mark where a sentence is needed — it is not always "." (Chinese uses 。, Hindi ।).
+   *
+   * `ogLocale` is the Open Graph form of the language, `language_TERRITORY`, matching the
+   * BCP-47 tags the pages use; link previews pick the shared page's language from it.
    */
   languageOptions: [
     {
       code: 'en',
+      ogLocale: 'en_US',
       label: 'English',
       flag: '🇬🇧',
       url: '/',
@@ -30,6 +34,7 @@ export const site = {
     },
     {
       code: 'zh',
+      ogLocale: 'zh_CN',
       label: '中文',
       flag: '🇨🇳',
       url: '/zh/',
@@ -41,6 +46,7 @@ export const site = {
     },
     {
       code: 'hi',
+      ogLocale: 'hi_IN',
       label: 'हिन्दी',
       flag: '🇮🇳',
       url: '/hi/',
@@ -52,6 +58,7 @@ export const site = {
     },
     {
       code: 'es',
+      ogLocale: 'es_ES',
       label: 'Español',
       flag: '🇪🇸',
       url: '/es/',
@@ -63,6 +70,7 @@ export const site = {
     },
     {
       code: 'fr',
+      ogLocale: 'fr_FR',
       label: 'Français',
       flag: '🇫🇷',
       url: '/fr/',
@@ -74,6 +82,7 @@ export const site = {
     },
     {
       code: 'hu',
+      ogLocale: 'hu_HU',
       label: 'Magyar',
       flag: '🇭🇺',
       url: '/hu/',
@@ -87,6 +96,15 @@ export const site = {
   contact: {
     name: 'Gabor Lengyel',
     email: 'lucivumx@gmail.com',
+  },
+  ads: {
+    tagId: 'AW-18429356075',
+    /**
+     * `send_to` of the Google Ads conversion action that counts a click on a Google Play
+     * badge, `AW-18429356075/<label>`. Empty until that action exists in Google Ads; every
+     * click is sent as a `play_store_click` event regardless.
+     */
+    playClickConversion: '',
   },
 } as const;
 

@@ -6,7 +6,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
 import { appResources } from '../config/resources';
-import { homePath, privacyPath, resourcesPath } from '../config/routes';
+import { appPath, homePath, privacyPath, resourcesPath, sitePrivacyPath } from '../config/routes';
 import { absolute } from '../config/site';
 
 // `astro build` runs from the project root, so resolve content files from there
@@ -67,9 +67,11 @@ function isoDate(date: Date): string {
 }
 
 export const GET: APIRoute = async () => {
-  const [homePages, policies] = await Promise.all([
+  const [homePages, appPages, policies, sitePolicies] = await Promise.all([
     getCollection('home'),
+    getCollection('apps'),
     getCollection('privacy'),
+    getCollection('sitePrivacy'),
   ]);
 
   const resourcesDate = resourcesLastModified();
@@ -78,6 +80,14 @@ export const GET: APIRoute = async () => {
     ...homePages.map((page) => ({
       loc: absolute(homePath(page.id)),
       lastmod: lastModified('home', page.id),
+    })),
+    ...appPages.map((page) => ({
+      loc: absolute(appPath(page.id)),
+      lastmod: lastModified('apps', page.id),
+    })),
+    ...sitePolicies.map((policy) => ({
+      loc: absolute(sitePrivacyPath(policy.id)),
+      lastmod: lastModified('site-privacy', policy.id),
     })),
     ...policies.map((policy) => ({
       loc: absolute(privacyPath(policy.id)),

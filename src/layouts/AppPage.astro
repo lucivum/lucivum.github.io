@@ -1,0 +1,198 @@
+---
+import { getEntry, render, type CollectionEntry } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
+
+import AppCards from '../components/AppCards.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import BaseLayout from './BaseLayout.astro';
+import {
+  appFeature,
+  appIcon,
+  appInfoFor,
+  appScreenshots,
+  playBadge,
+  playUrl,
+} from '../config/apps';
+import { appText } from '../config/appText';
+import { appResourcesFor } from '../config/resources';
+import { resourceText } from '../config/resourceText';
+import { appOf, appPath, homePath, languageOf, privacyPath, resourcesPath } from '../config/routes';
+import { site, type LanguageCode } from '../config/site';
+import { appPagesIn } from '../lib/appPages';
+import { appAlternates } from '../lib/hreflang';
+import { mobileApplication, organization } from '../lib/structuredData';
+
+interface Props {
+  entry: CollectionEntry<'apps'>;
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+const { Content } = await render(entry);
+const { alternates, xDefaultUrl } = await appAlternates(entry.id);
+
+const app = appOf(entry.id);
+const language = languageOf(entry.id) as LanguageCode;
+const info = appInfoFor(app);
+if (!info) {
+  throw new Error(`src/content/apps/${entry.id}.md has no matching entry in src/config/apps.ts.`);
+}
+const icon = appIcon(app);
+const text = appText[language];
+const linkText = resourceText[language];
+const landscape = info.orientation === 'landscape';
+const storeUrl = playUrl(info, language);
+
+// Share images and structured data go to crawlers that may not read WebP, so those stay
+// JPEG and PNG.
+const shareImage = await getImage({ src: appFeature(app, language), format: 'jpg', width: 1024 });
+const storeIcon = await getImage({ src: icon, format: 'png', width: 512 });
+
+// Each screenshot twice: sized for the strip, and large for the viewer it opens in.
+const screenshots = await Promise.all(
+  appScreenshots(app, language).map(async (src, index) => ({
+    src,
+    alt: text.screenshotAlt.replace('{app}', data.title).replace('{n}', String(index + 1)),
+    large: await getImage(landscape ? { src, width: 1920 } : { src, height: 1600 }),
+  })),
+);
+
+// Linked only where that page exists in this language, so neither can be a dead link.
+const hasPrivacy = (await getEntry('privacy', entry.id)) !== undefined;
+const hasResources = appResourcesFor(app)?.languages.includes(language) ?? false;
+
+// The other apps in this language; none for Vízállás in Hungarian, the only one there.
+const otherApps = (await appPagesIn(language)).filter((page) => appOf(page.id) !== app);
+
+const structuredData = [
+  organization(),
+  mobileApplication({
+    info,
+    name: data.title,
+    description: data.description,
+    language: data.language,
+    path: appPath(entry.id),
+    icon: storeIcon.src,
+    screenshots: screenshots.map((screenshot) => screenshot.large.src),
+    installUrl: storeUrl,
+  }),
+];
+---
+
+<BaseLayout
+    title={data.title}
+    description={data.description}
+    language={data.language}
+    languageCode={language}
+    path={appPath(entry.id)}
+    alternateLanguages={alternates}
+    xDefaultUrl={xDefaultUrl}
+    themeColor={data.theme_color}
+    shareImage={shareImage.src}
+    structuredData={structuredData}
+>
+    <div class="page app-page">
+        <LanguageSwitcher items={alternates} />
+
+        <div class="home-hero">
+            <p class="home-logo app-logo">
+                <Image src={icon} alt="" width={176} height={176} loading="eager" />
+            </p>
+            <p class="eyebrow"><a href={homePath(language)}>{site.name}</a></p>
+            <h1>{data.title}</h1>
+            <p class="home-lead">{data.description}</p>
+            <a class="play-badge" href={storeUrl} rel="noopener" data-play-app={app}>
+                <img src={playBadge(language)} alt={text.getOnPlay} width="646" height="192">
+            </a>
+        </div>
+
+        {screenshots.length > 0 && (
+        <div class="app-shots-wrap" data-shots>
+            <button type="button" class="shots-nav shots-prev" data-step="-1" aria-label={text.previous} hidden>
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+            </button>
+            <ul class:list={["app-shots", { landscape }]} aria-label={text.screenshots}>
+                {screenshots.map((screenshot) => (
+                <li>
+                    <a href={screenshot.large.src} data-full>
+                        {landscape
+                            ? <Image src={screenshot.src} width={1200} alt={screenshot.alt} />
+                            : <Image src={screenshot.src} height={880} alt={screenshot.alt} />}
+                    </a>
+                </li>
+                ))}
+            </ul>
+            <button type="button" class="shots-nav shots-next" data-step="1" aria-label={text.next} hidden>
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </button>
+        </div>
+
+        <dialog class="shot-viewer" aria-label={text.screenshots}>
+            <form method="dialog">
+                <button class="shot-close" aria-label={text.close}><span aria-hidden="true">×</span></button>
+            </form>
+            <img alt="">
+        </dialog>
+        )}
+
+        <div class="app-description">
+            <Content />
+        </div>
+
+        {(hasPrivacy || hasResources) && (
+        <p class="page-crosslink app-links">
+            {hasPrivacy && <a href={privacyPath(entry.id)}>{linkText.privacyLink}</a>}
+            {hasResources && <a href={resourcesPath(app, language)}>{linkText.heading}</a>}
+        </p>
+        )}
+
+        <AppCards heading={text.moreApps} pages={otherApps} />
+    </div>
+</BaseLayout>
+
+<script>
+  // Without this script the strip still scrolls and each screenshot opens as an image;
+  // it only adds the arrow buttons and the in-page viewer.
+  for (const wrap of document.querySelectorAll<HTMLElement>('[data-shots]')) {
+    const strip = wrap.querySelector<HTMLElement>('.app-shots');
+    if (!strip) continue;
+    const buttons = [...wrap.querySelectorAll<HTMLButtonElement>('[data-step]')];
+
+    const update = () => {
+      const max = strip.scrollWidth - strip.clientWidth;
+      for (const button of buttons) {
+        button.hidden = max <= 1;
+        button.disabled =
+          Number(button.dataset.step) < 0 ? strip.scrollLeft <= 1 : strip.scrollLeft >= max - 1;
+      }
+    };
+
+    for (const button of buttons) {
+      button.addEventListener('click', () => {
+        strip.scrollBy({ left: Number(button.dataset.step) * strip.clientWidth * 0.9, behavior: 'smooth' });
+      });
+    }
+    strip.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    update();
+  }
+
+  const viewer = document.querySelector<HTMLDialogElement>('.shot-viewer');
+  const viewerImage = viewer?.querySelector('img');
+  if (viewer && viewerImage) {
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('[data-full]')) {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        viewerImage.src = link.href;
+        viewerImage.alt = link.querySelector('img')?.alt ?? '';
+        viewer.showModal();
+      });
+    }
+    // A click anywhere but the close button's own form also closes it: on the backdrop
+    // or on the image itself.
+    viewer.addEventListener('click', (event) => {
+      if (event.target === viewer || event.target === viewerImage) viewer.close();
+    });
+  }
+</script>

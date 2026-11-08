@@ -1,9 +1,31 @@
 ---
-import { site } from '../config/site';
+import { appText } from '../config/appText';
+import { consentText } from '../config/consentText';
+import { appPath, homePath, sitePrivacyPath } from '../config/routes';
+import { site, type LanguageCode } from '../config/site';
+import { appPagesIn } from '../lib/appPages';
 
+interface Props {
+  /** The page's language: the footer links to the home page and app pages in it. */
+  language: string;
+}
+
+const { language } = Astro.props;
 const year = new Date().getFullYear();
+const appPages = await appPagesIn(language);
+const label = appText[language as LanguageCode]?.appsHeading;
+const consent = consentText[language as LanguageCode] ?? consentText.en;
 ---
 
 <footer>
-    <p class="small">{site.name} &copy; {year}</p>
+    <nav class="footer-nav" aria-label={label}>
+        <a href={homePath(language)}>{site.name}</a>
+        {appPages.map((page) => <a href={appPath(page.id)}>{page.data.title}</a>)}
+    </nav>
+    <p class="small">
+        {site.name} &copy; {year}
+        <a class="footer-policy" href={sitePrivacyPath(language)}>{consent.policy}</a>
+        <!-- Shown by ConsentBanner's script; without JavaScript there is no choice to change. -->
+        <button type="button" class="footer-consent" data-consent-open hidden>{consent.settings}</button>
+    </p>
 </footer>

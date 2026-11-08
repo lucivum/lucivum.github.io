@@ -1,6 +1,6 @@
 ---
-title: "संपर्क"
-description: "Lucivum ऐप्स के लिए संपर्क जानकारी और गोपनीयता नीतियां।"
+title: "ऐप्स और संपर्क"
+description: "हंगरी के स्वतंत्र डेवलपर Lucivum के मोबाइल ऐप्स, उनकी गोपनीयता नीतियां और संपर्क जानकारी।"
 language: "hi-IN"
 language_code: "hi"
 home_intro: "Lucivum हंगरी का एक स्वतंत्र ऐप डेवलपर है।"

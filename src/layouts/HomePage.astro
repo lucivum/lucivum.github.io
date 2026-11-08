@@ -1,11 +1,15 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 
+import AppCards from '../components/AppCards.astro';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import BaseLayout from './BaseLayout.astro';
-import { site } from '../config/site';
+import { appText } from '../config/appText';
+import { site, type LanguageCode } from '../config/site';
 import { homePath } from '../config/routes';
+import { appPagesIn } from '../lib/appPages';
 import { homeAlternates } from '../lib/hreflang';
+import { organization } from '../lib/structuredData';
 
 interface Props {
   entry: CollectionEntry<'home'>;
@@ -14,6 +18,10 @@ interface Props {
 const { entry } = Astro.props;
 const data = entry.data;
 const { alternates, xDefaultUrl } = await homeAlternates();
+
+// Only the apps that have a page in this language.
+const appPages = await appPagesIn(entry.id);
+const text = appText[entry.id as LanguageCode];
 ---
 
 <BaseLayout
@@ -25,6 +33,7 @@ const { alternates, xDefaultUrl } = await homeAlternates();
     alternateLanguages={alternates}
     xDefaultUrl={xDefaultUrl}
     themeColor={data.theme_color}
+    structuredData={[organization()]}
 >
     <div class="page">
         <div id="home">
@@ -39,6 +48,8 @@ const { alternates, xDefaultUrl } = await homeAlternates();
                 <p class="home-lead">{data.home_lead}</p>
                 <a class="contact-link" href={`mailto:${site.contact.email}`}>{site.contact.email} <span aria-hidden="true">↗</span></a>
             </div>
+
+            <AppCards heading={text.appsHeading} pages={appPages} />
         </div>
     </div>
 </BaseLayout>

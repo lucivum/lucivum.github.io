@@ -1,6 +1,6 @@
 ---
-title: "Kapcsolat"
-description: "Kapcsolattartási információk és adatvédelmi tájékoztatók a Lucivum alkalmazásaihoz."
+title: "Alkalmazások és kapcsolat"
+description: "A Lucivum magyarországi független fejlesztő mobilalkalmazásai, azok adatvédelmi tájékoztatói és elérhetőségei."
 language: "hu-HU"
 language_code: "hu"
 home_intro: "A Lucivum egy magyarországi független alkalmazásfejlesztő."

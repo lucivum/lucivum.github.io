@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+import { appIcon } from '../config/apps';
+import { appOf, appPath } from '../config/routes';
+
+interface Props {
+  heading: string;
+  pages: CollectionEntry<'apps'>[];
+}
+
+const { heading, pages } = Astro.props;
+---
+
+{pages.length > 0 && (
+<section class="home-apps">
+    <h2>{heading}</h2>
+    <ul class="app-cards">
+        {pages.map((page) => (
+        <li>
+            <a class="app-card" href={appPath(page.id)}>
+                <Image src={appIcon(appOf(page.id))} alt="" width={112} height={112} />
+                <span>
+                    <strong>{page.data.title}</strong>
+                    <span>{page.data.description}</span>
+                </span>
+            </a>
+        </li>
+        ))}
+    </ul>
+</section>
+)}

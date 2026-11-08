@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+
+import SitePrivacyPage from '../../../layouts/SitePrivacyPage.astro';
+import { isDefaultLanguage } from '../../../config/routes';
+
+// Shares its pattern with src/pages/[app]/privacy/. Each builds only the paths it lists,
+// and a clash fails the build (`prerenderConflictBehavior` in astro.config.mjs).
+export async function getStaticPaths() {
+  const pages = await getCollection('sitePrivacy');
+  // The default language lives at /privacy/ via src/pages/privacy/.
+  return pages
+    .filter((page) => !isDefaultLanguage(page.id))
+    .map((page) => ({ params: { lang: page.id }, props: { entry: page } }));
+}
+
+const { entry } = Astro.props;
+---
+
+<SitePrivacyPage entry={entry} />

@@ -1,0 +1,54 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import BaseLayout from './BaseLayout.astro';
+import { homePath, sitePrivacyPath } from '../config/routes';
+import { site } from '../config/site';
+import { sitePrivacyAlternates } from '../lib/hreflang';
+
+interface Props {
+  entry: CollectionEntry<'sitePrivacy'>;
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+const { Content } = await render(entry);
+const { alternates, xDefaultUrl } = await sitePrivacyAlternates();
+---
+
+<BaseLayout
+    title={data.title}
+    description={data.description}
+    language={data.language}
+    languageCode={entry.id}
+    path={sitePrivacyPath(entry.id)}
+    alternateLanguages={alternates}
+    xDefaultUrl={xDefaultUrl}
+    themeColor={data.theme_color}
+>
+    <div class="page privacy-page">
+        <LanguageSwitcher items={alternates} />
+
+        <!-- The app policies' header, with the developer's logo where they show the app icon. -->
+        <p class="home-logo">
+            <a href={homePath(entry.id)}><img src={site.logo} alt={site.name}></a>
+        </p>
+        <p class="eyebrow"><a href={homePath(entry.id)}>{site.name}</a></p>
+
+        <h1>{data.title}</h1>
+
+        <div class="policy-meta">
+            <p><strong>{data.effective_date_label}:</strong> {data.effective_date}</p>
+            <p><strong>{data.last_updated_label}:</strong> {data.last_updated}</p>
+        </div>
+
+        <section class="controller-block">
+            <h2>{data.controller_title}</h2>
+            <p><strong>{data.name_label}:</strong> {site.contact.name}</p>
+            <p><strong>{data.email_label}:</strong> <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></p>
+        </section>
+
+        <Content />
+    </div>
+</BaseLayout>

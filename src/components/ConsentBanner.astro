@@ -1,0 +1,48 @@
+---
+import { consentText } from '../config/consentText';
+import { sitePrivacyPath } from '../config/routes';
+import type { LanguageCode } from '../config/site';
+
+interface Props {
+  language: string;
+}
+
+const { language } = Astro.props;
+const text = consentText[language as LanguageCode] ?? consentText.en;
+---
+
+<!-- Hidden until the script below finds no stored choice. Without JavaScript the tag
+     cannot load either, so there is nothing to ask about. -->
+<section class="consent-banner" role="region" aria-label={text.settings} hidden data-consent-banner>
+    <p>{text.message} <a href={sitePrivacyPath(language)}>{text.policy}</a></p>
+    <div class="consent-actions">
+        <button type="button" data-consent="denied">{text.reject}</button>
+        <button type="button" data-consent="granted">{text.accept}</button>
+    </div>
+</section>
+
+<script is:inline>
+  (function () {
+    var consent = window.lucivumConsent;
+    var banner = document.querySelector('[data-consent-banner]');
+    if (!consent || !banner) return;
+
+    function show() { banner.hidden = false; }
+
+    banner.addEventListener('click', function (event) {
+      var button = event.target instanceof Element && event.target.closest('[data-consent]');
+      if (!button) return;
+      consent.set(button.getAttribute('data-consent'));
+      banner.hidden = true;
+    });
+
+    // The footer's settings link brings the banner back, so a choice can be changed.
+    var settings = document.querySelector('[data-consent-open]');
+    if (settings) {
+      settings.hidden = false;
+      settings.addEventListener('click', show);
+    }
+
+    if (!consent.choice()) show();
+  })();
+</script>

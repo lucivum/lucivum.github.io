@@ -1,0 +1,28 @@
+---
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+import { appIcon } from '../config/apps';
+import { appPath, homePath } from '../config/routes';
+import { site } from '../config/site';
+
+interface Props {
+  app: string;
+  language: string;
+}
+
+/*
+ * The top of the app page's hero, over an app's privacy policy and resource page: the
+ * same icon and Lucivum label, so the three pages read as one app's. The icon leads back
+ * to the app page where there is one in this language.
+ */
+const { app, language } = Astro.props;
+const appPage = await getEntry('apps', `${language}/${app}`);
+---
+
+<p class="home-logo app-logo">
+    {appPage
+        ? <a href={appPath(appPage.id)}><Image src={appIcon(app)} alt={appPage.data.title} width={176} height={176} loading="eager" /></a>
+        : <Image src={appIcon(app)} alt="" width={176} height={176} loading="eager" />}
+</p>
+<p class="eyebrow"><a href={homePath(language)}>{site.name}</a></p>

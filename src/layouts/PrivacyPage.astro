@@ -1,6 +1,7 @@
 ---
 import { render, type CollectionEntry } from 'astro:content';
 
+import AppHeader from '../components/AppHeader.astro';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import BaseLayout from './BaseLayout.astro';
 import { site } from '../config/site';
@@ -36,8 +37,9 @@ const hasResources = appResourcesFor(app)?.languages.includes(language) ?? false
     xDefaultUrl={xDefaultUrl}
     themeColor={data.theme_color}
 >
-    <div class:list={["page", "privacy-page", { "has-switcher": alternates.length > 1 }]}>
+    <div class="page privacy-page">
         <LanguageSwitcher items={alternates} />
+        <AppHeader app={app} language={language} />
 
         <h1>{data.title}</h1>
 

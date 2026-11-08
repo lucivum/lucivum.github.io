@@ -257,8 +257,9 @@ body.lang-hu .language-option[lang="hu"] {
 
 }
 
-/* The contact homepage uses a separate dark presentation. */
-body:has(#home) {
+/* The contact homepage uses a separate dark presentation, and the app pages share it. */
+body:has(#home),
+body:has(.app-page) {
     --paper: #0d151d;
     --ink: #f2f6f8;
     --muted: #aab8c1;
@@ -276,11 +277,15 @@ body:has(#home) {
 
 body:has(#home) h1,
 body:has(#home) h2,
-body:has(#home) h3 {
+body:has(#home) h3,
+body:has(.app-page) h1,
+body:has(.app-page) h2,
+body:has(.app-page) h3 {
     color: var(--ink);
 }
 
-body:has(#home) .contact-link:hover {
+body:has(#home) .contact-link:hover,
+body:has(.app-page) .contact-link:hover {
     color: #fff;
 }
 
@@ -342,31 +347,8 @@ body:has(#not-found) h3 {
     text-decoration: none;
 }
 
-/* The language switcher is fixed to the top-right corner, so it cannot push the
-   page down. Reserve room for it above the policy title — only on pages that
-   actually render one (a policy in a single language does not). */
-.privacy-page.has-switcher {
-    padding-top: 88px;
-}
-
-@media (max-width: 560px) {
-    .privacy-page.has-switcher {
-        padding-top: 68px;
-    }
-}
-
 /* Resource pages: one labelled line per credited work, so the name of the work stays
    readable as a link while what the app uses it for reads as a caption above it. */
-.resources-page.has-switcher {
-    padding-top: 88px;
-}
-
-@media (max-width: 560px) {
-    .resources-page.has-switcher {
-        padding-top: 68px;
-    }
-}
-
 .resource-list {
     margin: 0 0 24px;
     padding: 0;
@@ -415,3 +397,370 @@ body:has(#not-found) h3 {
 .page-crosslink {
     margin-top: 46px;
 }
+
+/* Several links between an app's pages on one line. */
+.app-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+}
+
+/* App pages share the home page's dark presentation and hero; only the icon, the
+   screenshots and the listing text are their own. */
+.app-logo img {
+    border-radius: 22%;
+}
+
+.eyebrow a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* One row that scrolls sideways and snaps to each screenshot. Portrait shots share a
+   height; landscape ones share a width, so a wide shot never outgrows the screen. */
+/* Google's badge carries its own border and wording; it only needs a size. The files in
+   public/images/badges/ are cropped to the badge itself: Google ships them with
+   transparent margins, wider on the English one than on the rest, which made the same
+   height draw a smaller English badge. */
+.play-badge {
+    display: inline-block;
+    line-height: 0;
+}
+
+.play-badge img {
+    width: auto;
+    height: 48px;
+}
+
+.app-shots-wrap {
+    position: relative;
+    margin: 64px 0 48px;
+}
+
+.app-shots {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0 0 14px;
+    overflow-x: auto;
+    list-style: none;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+}
+
+.app-shots li {
+    flex: none;
+    scroll-snap-align: start;
+}
+
+/* A styled scrollbar, so the strip always shows it can scroll. macOS, iOS and Android
+   hide their default overlay scrollbar until the strip moves. Chrome and Safari keep a
+   `::-webkit-scrollbar` visible; Chrome ignores it whenever `scrollbar-color` is set, so
+   that property is given to Firefox only. */
+.app-shots::-webkit-scrollbar {
+    height: 8px;
+}
+
+.app-shots::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: var(--line);
+}
+
+.app-shots::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: var(--muted);
+}
+
+.app-shots::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+@supports (-moz-appearance: none) {
+    .app-shots {
+        scrollbar-color: var(--muted) var(--line);
+    }
+}
+
+.app-shots img {
+    display: block;
+    width: auto;
+    height: min(440px, 65vh);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.app-shots.landscape img {
+    width: min(560px, 82vw);
+    height: auto;
+}
+
+.app-shots a {
+    display: block;
+    cursor: zoom-in;
+}
+
+/* Arrows for a mouse, which has no swipe; touch screens scroll the strip directly. */
+.shots-nav {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    top: calc(50% - 7px);
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--switcher-bg);
+    box-shadow: var(--switcher-shadow);
+    color: var(--ink);
+    cursor: pointer;
+    transform: translateY(-50%);
+    backdrop-filter: blur(12px);
+}
+
+/* A drawn chevron rather than a ‹ › character: a glyph sits on the font's baseline and
+   its side bearings, never in the optical centre of the circle. */
+.shots-nav svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.shots-nav[hidden] { display: none; }
+.shots-nav:hover { border-color: var(--accent); }
+.shots-nav:disabled { opacity: 0; pointer-events: none; }
+.shots-prev { left: -22px; }
+.shots-next { right: -22px; }
+
+@media (hover: none), (max-width: 860px) {
+    .shots-nav { display: none; }
+}
+
+.shot-viewer {
+    max-width: 96vw;
+    max-height: 96vh;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.shot-viewer::backdrop {
+    background: rgba(5, 10, 15, 0.86);
+}
+
+.shot-viewer img {
+    display: block;
+    max-width: 96vw;
+    max-height: 92vh;
+    width: auto;
+    height: auto;
+    border-radius: 16px;
+    cursor: zoom-out;
+}
+
+.shot-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* Store listings mark their sections with short capitalised labels; set them like the
+   eyebrow so they read as labels rather than as shouted headings. */
+.app-description {
+    max-width: 650px;
+}
+
+.app-page .app-description h3 {
+    margin: 36px 0 10px;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+}
+
+.app-description ul {
+    padding-left: 1.2em;
+}
+
+.app-description li {
+    margin: 4px 0;
+}
+
+@media (max-width: 560px) {
+    .app-shots-wrap {
+        margin-top: 44px;
+    }
+
+    .shot-close {
+        top: 8px;
+        right: 8px;
+    }
+}
+
+/* Home page app list, on the dark home presentation. */
+.home-apps {
+    margin-top: 72px;
+}
+
+.home-apps h2 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.app-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.app-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 100%;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.app-card:hover {
+    border-color: var(--accent);
+    color: var(--ink);
+}
+
+.app-card img {
+    flex: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 13px;
+}
+
+.app-card strong {
+    display: block;
+    font-size: 1.05rem;
+    line-height: 1.3;
+}
+
+.app-card strong + span {
+    display: block;
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+/* Every page ends on the way back: the home page and the apps in the page's language. */
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 20px;
+    margin: 0 0 8px;
+}
+
+.footer-nav a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: var(--ink);
+}
+
+/* Cookie banner, pinned to the bottom until a choice is made. Both buttons look alike on
+   purpose: refusing has to be as easy to see and press as accepting. */
+.consent-banner {
+    position: fixed;
+    z-index: 20;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--switcher-bg);
+    box-shadow: var(--switcher-shadow);
+    color: var(--ink);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    backdrop-filter: blur(12px);
+}
+
+.consent-banner[hidden] { display: none; }
+
+.consent-banner p {
+    flex: 1 1 320px;
+    margin: 0;
+}
+
+.consent-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.consent-actions button {
+    min-width: 108px;
+    padding: 9px 16px;
+    border: 1px solid var(--ink);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.consent-actions button:hover {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+/* The footer's links to the website's privacy policy and back into the banner. */
+.footer-policy {
+    margin-left: 14px;
+    color: inherit;
+}
+
+.footer-policy:hover { color: var(--ink); }
+
+.footer-consent {
+    margin-left: 14px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.footer-consent[hidden] { display: none; }
+
+.footer-consent:hover { color: var(--ink); }

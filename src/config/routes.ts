@@ -20,6 +20,17 @@ export function privacyPath(id: string): string {
     : `/${language}/${app}/privacy/`;
 }
 
+/** `sitePrivacy` entry id -> URL. `en` -> `/privacy/`, `hu` -> `/hu/privacy/` */
+export function sitePrivacyPath(id: string): string {
+  return id === DEFAULT_LANGUAGE ? '/privacy/' : `/${id}/privacy/`;
+}
+
+/** `apps` entry id -> URL. `en/rect` -> `/rect/`, `hu/vizallas` -> `/hu/vizallas/` */
+export function appPath(id: string): string {
+  const [language, app] = id.split('/');
+  return language === DEFAULT_LANGUAGE ? `/${app}/` : `/${language}/${app}/`;
+}
+
 /**
  * Resource page URL for an app in a language. Resource pages are not built from content
  * files, so they are addressed by their two parts rather than by an entry id.
@@ -32,7 +43,7 @@ export function resourcesPath(app: string, language: string): string {
     : `/${language}/${app}/resources/`;
 }
 
-/** The app segment of a `privacy` entry id (`en/rect` -> `rect`). */
+/** The app segment of a `privacy` or `apps` entry id (`en/rect` -> `rect`). */
 export function appOf(id: string): string {
   return id.split('/')[1];
 }

@@ -45,6 +45,9 @@ export default defineConfig({
   site: SITE,
   // Emit `path/index.html` so every page URL keeps its trailing slash.
   build: { format: 'directory' },
+  // `/[app]/` and `/[lang]/` share one URL pattern. An app named like a language code
+  // would silently replace that language's home page; fail the build instead.
+  prerenderConflictBehavior: 'error',
   markdown: {
     processor: satteri({ hastPlugins: [externalLinks] }),
   },

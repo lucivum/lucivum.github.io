@@ -1,4 +1,5 @@
 ---
+import AppHeader from '../components/AppHeader.astro';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import BaseLayout from './BaseLayout.astro';
 import { privacyPath, resourcesPath } from '../config/routes';
@@ -43,8 +44,9 @@ const { alternates, xDefaultUrl } = resourcesAlternates(entry.app);
     xDefaultUrl={xDefaultUrl}
     themeColor={entry.themeColor}
 >
-    <div class:list={["page", "resources-page", { "has-switcher": alternates.length > 1 }]}>
+    <div class="page resources-page">
         <LanguageSwitcher items={alternates} />
+        <AppHeader app={entry.app} language={language} />
 
         <h1>{title}</h1>
 

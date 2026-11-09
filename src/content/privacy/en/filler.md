@@ -4,7 +4,7 @@ description: "Privacy Policy for The Filler application."
 language: "en-US"
 theme_color: "#081722"
 effective_date: "September 17, 2026"
-last_updated: "September 23, 2026"
+last_updated: "November 9, 2026"
 effective_date_label: "Effective date"
 last_updated_label: "Last updated"
 controller_title: "Data controller"
@@ -56,7 +56,7 @@ For users in the European Economic Area, the United Kingdom, and Switzerland, UM
 
 Privacy settings are available from **Info / Privacy options** in the app when UMP determines that a privacy-options entry point is required.
 
-## 5. Firebase Crashlytics
+## 5. Firebase Crashlytics and Analytics
 
 The app uses Firebase Crashlytics to detect, investigate, and fix crashes and other technical problems.
 
@@ -67,6 +67,17 @@ Crashlytics may process, among other things:
 - operating-system and device information;
 - Crashlytics and Firebase installation identifiers;
 - the time and technical context of a crash, including which chapter and which level or challenge was being played.
+
+The app also uses Firebase Analytics to see how it is used as a whole: how many people open it, how often they come back, and on which devices and in which countries.
+
+Analytics may process, among other things:
+
+- app opens, sessions and the time spent in the app;
+- app version, device model and operating-system version;
+- country or region, derived from the IP address;
+- a Firebase installation identifier and an advertising identifier.
+
+This is counted in aggregate. The app has no account, so nothing here is tied to a person.
 
 The app does not directly request a name, phone number, or email address.
 

@@ -4,7 +4,7 @@ description: "A Vízállás alkalmazás adatvédelmi tájékoztatója."
 language: "hu-HU"
 theme_color: "#f4f6f5"
 effective_date: "2026. augusztus 18."
-last_updated: "2026. szeptember 23."
+last_updated: "2026. november 9."
 effective_date_label: "Hatálybalépés"
 last_updated_label: "Utolsó frissítés"
 controller_title: "Az adatkezelő"
@@ -64,7 +64,7 @@ Az Európai Gazdasági Térségben, az Egyesült Királyságban és Svájcban a 
 
 Az adatvédelmi beállítások az alkalmazás **Információ / Adatvédelmi beállítások** menüpontjából érhetők el, amikor a UMP ezt szükségesnek jelzi.
 
-## 6. Firebase Crashlytics
+## 6. Firebase Crashlytics és Analytics
 
 Az alkalmazás Firebase Crashlytics szolgáltatást használ az összeomlások és egyéb technikai hibák felismerésére, kivizsgálására és javítására.
 
@@ -77,6 +77,17 @@ A Crashlytics kezelhet többek között:
 - az összeomlás időpontját és technikai körülményeit.
 
 Az alkalmazás közvetlenül nem kér nevet, telefonszámot vagy e-mail-címet.
+
+Az alkalmazás a Firebase Analyticset is használja annak megismerésére, hogyan használják összességében: hányan nyitják meg, milyen gyakran térnek vissza, milyen készülékeken és mely országokban.
+
+Az Analytics többek között a következőket kezelheti:
+
+- alkalmazásmegnyitások, munkamenetek és az alkalmazásban eltöltött idő;
+- alkalmazásverzió, készüléktípus és operációsrendszer-verzió;
+- ország vagy régió, az IP-cím alapján megállapítva;
+- Firebase telepítési azonosító és hirdetési azonosító.
+
+Mindez összesítve kerül számbavételre. Az alkalmazásban nincs fiók, így ezek egyike sem köthető személyhez.
 
 További információ a [Firebase adatvédelmi és biztonsági tájékoztatójában](https://firebase.google.com/support/privacy) található.
 

@@ -4,7 +4,7 @@ description: "Politique de confidentialité de l’application Rectangle."
 language: "fr-FR"
 theme_color: "#f4f6f5"
 effective_date: "19 août 2026"
-last_updated: "23 septembre 2026"
+last_updated: "9 novembre 2026"
 effective_date_label: "Date d’entrée en vigueur"
 last_updated_label: "Dernière mise à jour"
 controller_title: "Responsable du traitement"
@@ -54,7 +54,7 @@ Pour les utilisateurs de l'Espace économique européen, du Royaume-Uni et de la
 
 Les paramètres de confidentialité sont accessibles depuis **Info / Options de confidentialité** dans l'application lorsque l'UMP détermine qu'un point d'accès aux options de confidentialité est nécessaire.
 
-## 5. Firebase Crashlytics
+## 5. Firebase Crashlytics et Analytics
 
 L'application utilise Firebase Crashlytics pour détecter, analyser et corriger les plantages et autres problèmes techniques.
 
@@ -67,6 +67,17 @@ Crashlytics peut traiter, entre autres :
 - l’heure et le contexte technique d’un plantage.
 
 L’application ne demande pas directement de nom, de numéro de téléphone ou d’adresse e-mail.
+
+L'application utilise également Firebase Analytics pour observer son usage dans son ensemble : combien de personnes l'ouvrent, à quelle fréquence elles reviennent, sur quels appareils et dans quels pays.
+
+Analytics peut traiter, entre autres :
+
+- les ouvertures de l'application, les sessions et le temps passé dans l'application ;
+- la version de l'application, le modèle d'appareil et la version du système d'exploitation ;
+- le pays ou la région, déduits de l'adresse IP ;
+- un identifiant d'installation Firebase et un identifiant publicitaire.
+
+Ces données sont comptées de manière agrégée. L'application n'a pas de compte : rien de tout cela n'est rattaché à une personne.
 
 Vous trouverez plus d’informations dans la [documentation relative à la confidentialité et à la sécurité de Firebase](https://firebase.google.com/support/privacy).
 

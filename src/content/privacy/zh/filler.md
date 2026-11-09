@@ -4,7 +4,7 @@ description: "The Filler 应用的隐私政策。"
 language: "zh-CN"
 theme_color: "#081722"
 effective_date: "2026年9月17日"
-last_updated: "2026年9月23日"
+last_updated: "2026年11月9日"
 effective_date_label: "生效日期"
 last_updated_label: "最后更新"
 controller_title: "数据控制者"
@@ -56,7 +56,7 @@ email_label: "电子邮箱"
 
 当 UMP 确定需要提供隐私选项入口时，用户可通过应用中的 **“信息/隐私选项”** 访问隐私设置。
 
-## 5. Firebase Crashlytics
+## 5. Firebase Crashlytics 与 Analytics
 
 本应用使用 Firebase Crashlytics 来发现、排查和修复崩溃及其他技术问题。
 
@@ -69,6 +69,17 @@ Crashlytics 可能处理的信息包括：
 - 崩溃发生的时间和技术环境，包括当时所玩的关卡。
 
 本应用不会直接索取姓名、电话号码或电子邮箱地址。
+
+本应用还使用 Firebase Analytics 来了解应用的整体使用情况：有多少人打开它、他们多久回访一次，以及使用的设备和所在国家/地区。
+
+Analytics 可能会处理以下信息：
+
+- 应用打开次数、会话以及在应用内停留的时长；
+- 应用版本、设备型号和操作系统版本；
+- 根据 IP 地址推断的国家或地区；
+- Firebase 安装标识符和广告标识符。
+
+这些数据以汇总形式统计。本应用没有账户，因此这里的任何内容都不会与某个人关联。
 
 更多信息请参阅 [Firebase 隐私与安全文档](https://firebase.google.com/support/privacy)。
 

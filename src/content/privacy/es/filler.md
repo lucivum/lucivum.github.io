@@ -4,7 +4,7 @@ description: "Política de privacidad de la aplicación The Filler."
 language: "es-ES"
 theme_color: "#081722"
 effective_date: "17 de septiembre de 2026"
-last_updated: "23 de septiembre de 2026"
+last_updated: "9 de noviembre de 2026"
 effective_date_label: "Fecha de entrada en vigor"
 last_updated_label: "Última actualización"
 controller_title: "Responsable del tratamiento"
@@ -58,7 +58,7 @@ Para los usuarios del Espacio Económico Europeo, el Reino Unido y Suiza, la UMP
 
 Los ajustes de privacidad están disponibles en **Información / Opciones de privacidad** de la aplicación cuando la UMP determina que es necesario un punto de acceso a las opciones de privacidad.
 
-## 5. Firebase Crashlytics
+## 5. Firebase Crashlytics y Analytics
 
 La aplicación utiliza Firebase Crashlytics para detectar, investigar y corregir fallos y otros problemas técnicos.
 
@@ -71,6 +71,17 @@ Crashlytics puede tratar, entre otros:
 - el momento y el contexto técnico del fallo, incluido el nivel que se estaba jugando.
 
 La aplicación no solicita directamente nombre, número de teléfono ni dirección de correo electrónico.
+
+La aplicación también utiliza Firebase Analytics para conocer su uso en conjunto: cuántas personas la abren, con qué frecuencia vuelven y en qué dispositivos y países.
+
+Analytics puede tratar, entre otras cosas:
+
+- aperturas de la aplicación, sesiones y tiempo de uso;
+- versión de la aplicación, modelo de dispositivo y versión del sistema operativo;
+- país o región, deducidos de la dirección IP;
+- un identificador de instalación de Firebase y un identificador publicitario.
+
+Esto se cuenta de forma agregada. La aplicación no tiene cuentas, así que nada de esto se vincula a una persona.
 
 Más información en la [documentación de privacidad y seguridad de Firebase](https://firebase.google.com/support/privacy).
 

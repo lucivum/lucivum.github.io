@@ -46,6 +46,10 @@ const permalink = absolute(path);
 const fullTitle = `${title} - ${site.name}`;
 const image = absolute(shareImage ?? site.logo);
 
+// Google Analytics 4, loaded after consent. Without a measurement ID there is nothing to
+// load or ask consent for, so the banner is left out too.
+const measurementId: string = site.analytics.measurementId;
+
 // Open Graph names the page's language and every translation of it, so a link preview
 // can show the reader's language. Pages without a language code are English-only.
 const pageLanguage = languageCode ?? DEFAULT_LANGUAGE;
@@ -69,12 +73,13 @@ const jsonLd =
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- The Google Ads tag loads only once the visitor accepts its cookies in the banner
+    <!-- Google Analytics loads only once the visitor accepts its cookies in the banner
          (ConsentBanner.astro). Until then nothing is fetched from Google and no event is
          queued, so a choice made later cannot send what happened before it. -->
-    <script is:inline define:vars={{ tagId: site.ads.tagId, playConversion: site.ads.playClickConversion }}>
+    <script is:inline define:vars={{ measurementId }}>
       var STORAGE_KEY = 'lucivum-consent';
-      var GRANTED = { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' };
+      // Analytics only: the advertising signals stay denied whatever the visitor chooses.
+      var GRANTED = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted' };
       var DENIED = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' };
 
       window.dataLayer = window.dataLayer || [];
@@ -84,16 +89,17 @@ const jsonLd =
       var loaded = false;
       var granted = false;
 
+      // Without a measurement ID there is no tag to load, whatever an earlier visit chose.
       function loadTag() {
-        if (loaded) return;
+        if (loaded || !measurementId) return;
         loaded = true;
         gtag('consent', 'default', DENIED);
         gtag('consent', 'update', GRANTED);
         gtag('js', new Date());
-        gtag('config', tagId);
+        gtag('config', measurementId);
         var script = document.createElement('script');
         script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + tagId;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
         document.head.appendChild(script);
       }
 
@@ -123,10 +129,12 @@ const jsonLd =
         loadTag();
       }
 
-      // A click on a Google Play badge leaves the site, so it is sent as a beacon: a normal
-      // request would be cancelled by the navigation it starts.
+      // A click on a Google Play badge is sent as a beacon, which still arrives if the
+      // browser opens the store app or leaves the page instead of a new tab.
       document.addEventListener('click', function (event) {
-        if (!granted) return;
+        // Only with the tag running and consent still given: withdrawing on this page
+        // leaves the tag loaded, but nothing more is sent.
+        if (!loaded || !granted) return;
         var link = event.target instanceof Element && event.target.closest('a[data-play-app]');
         if (!link) return;
         gtag('event', 'play_store_click', {
@@ -134,9 +142,6 @@ const jsonLd =
           language: document.documentElement.lang,
           transport_type: 'beacon',
         });
-        if (playConversion) {
-          gtag('event', 'conversion', { send_to: playConversion, transport_type: 'beacon' });
-        }
       });
     </script>
     <meta name="theme-color" content={themeColor}>
@@ -187,6 +192,6 @@ const jsonLd =
     </main>
 
     <Footer language={pageLanguage} />
-    <ConsentBanner language={pageLanguage} />
+    {measurementId && <ConsentBanner language={pageLanguage} />}
 </body>
 </html>

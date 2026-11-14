@@ -18,7 +18,7 @@ carrying the contact page, a landing page per app, and the per-app privacy polic
 | `src/assets/apps/<app>/` | `icon.png`, the feature graphic used as share image (`feature/<lang>.png`, or `feature.*` for every language), and the Google Play screenshots in `screenshots/<lang>/` (or `screenshots/all/`), served as resized WebP. |
 | `scripts/sync-apps.py` | Copies each app's listing text and images from its own folder into the two rows above. |
 | `src/content/privacy/<lang>/<app>.md` | Privacy policy per app and language → `/<app>/privacy/` for English, `/<lang>/<app>/privacy/` otherwise |
-| `src/content/site-privacy/<lang>.md` | The website's own privacy policy (hosting, cookie banner, Google Ads) → `/privacy/` for English, `/<lang>/privacy/` otherwise. Linked from the banner and every footer. |
+| `src/content/site-privacy/<lang>.md` | The website's own privacy policy (hosting, cookie banner, Google Analytics) → `/privacy/` for English, `/<lang>/privacy/` otherwise. Linked from the banner and every footer. |
 | `src/layouts/BaseLayout.astro` | Document shell: `<head>` metadata, hreflang links, footer. |
 | `src/pages/` | Routes: the root landing page, `404`, the language/app routes, and `sitemap.xml`. |
 | `public/` | Files copied verbatim: CSS, logo, Google Play badges, `robots.txt`, `app-ads.txt`, `CNAME`. |
@@ -52,14 +52,17 @@ Pushing to `main` builds and publishes to GitHub Pages via `.github/workflows/de
 
 ## Analytics
 
-The Google Ads tag loads only after a visitor accepts cookies in the banner
+The website uses Google Analytics 4 only, configured by `site.analytics.measurementId`
+in `src/config/site.ts`; while it is empty nothing loads and there is no banner. Google's
+advertising signals stay denied. GA4 loads only after a visitor accepts cookies in the
+banner
 (`src/components/ConsentBanner.astro`, text in `src/config/consentText.ts`). Until then
 nothing is fetched from Google. The choice is kept in the browser under `lucivum-consent`,
 and the footer's cookie settings link brings the banner back to change it. The website
 privacy policy (`src/content/site-privacy/`) describes this setup; update it, and its
 `last_updated` date, whenever the tracking changes.
 
-With consent given, every click on a Google Play badge is sent as a `play_store_click`
-event, with the app and the page language. To count those clicks as conversions, create
-a conversion action in Google Ads and put its `send_to` value in
-`site.ads.playClickConversion` in `src/config/site.ts`.
+With consent given, GA4 records page views on its own, and every click on a Google Play
+badge is sent as a `play_store_click` event, with the app and the page language. To break
+those clicks down by app, register `app` and `language` as event-scoped custom dimensions
+(Admin → Custom definitions).

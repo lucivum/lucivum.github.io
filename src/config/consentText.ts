@@ -16,47 +16,42 @@ export interface ConsentText {
 
 export const consentText: Record<LanguageCode, ConsentText> = {
   en: {
-    message:
-      'This site uses Google Ads cookies to measure visits and clicks on the Google Play buttons. They are set only if you accept.',
+    message: 'This site uses Google Analytics cookies, only if you accept.',
     accept: 'Accept',
     reject: 'Reject',
     settings: 'Cookie settings',
     policy: 'Privacy policy',
   },
   zh: {
-    message: '本网站使用 Google Ads Cookie 统计访问量和 Google Play 按钮的点击次数。只有在您同意后才会设置这些 Cookie。',
+    message: '本网站仅在您同意后使用 Google Analytics Cookie。',
     accept: '接受',
     reject: '拒绝',
     settings: 'Cookie 设置',
     policy: '隐私政策',
   },
   hi: {
-    message:
-      'यह साइट विज़िट और Google Play बटन पर क्लिक मापने के लिए Google Ads कुकीज़ का उपयोग करती है। ये केवल तभी सेट होती हैं जब आप स्वीकार करते हैं।',
+    message: 'यह साइट केवल आपकी सहमति से Google Analytics कुकीज़ का उपयोग करती है।',
     accept: 'स्वीकार करें',
     reject: 'अस्वीकार करें',
     settings: 'कुकी सेटिंग्स',
     policy: 'गोपनीयता नीति',
   },
   es: {
-    message:
-      'Este sitio usa cookies de Google Ads para medir las visitas y los clics en los botones de Google Play. Solo se instalan si las aceptas.',
+    message: 'Este sitio usa cookies de Google Analytics solo si las aceptas.',
     accept: 'Aceptar',
     reject: 'Rechazar',
     settings: 'Configuración de cookies',
     policy: 'Política de privacidad',
   },
   fr: {
-    message:
-      'Ce site utilise des cookies Google Ads pour mesurer les visites et les clics sur les boutons Google Play. Ils ne sont déposés que si vous les acceptez.',
+    message: 'Ce site utilise des cookies Google Analytics uniquement si vous les acceptez.',
     accept: 'Accepter',
     reject: 'Refuser',
     settings: 'Paramètres des cookies',
     policy: 'Politique de confidentialité',
   },
   hu: {
-    message:
-      'Ez az oldal Google Ads sütiket használ a látogatások és a Google Play gombokra leadott kattintások mérésére. Csak akkor kerülnek beállításra, ha elfogadod.',
+    message: 'Ez az oldal csak a hozzájárulásoddal használ Google Analytics sütiket.',
     accept: 'Elfogadom',
     reject: 'Elutasítom',
     settings: 'Sütibeállítások',

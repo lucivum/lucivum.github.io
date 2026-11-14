@@ -3,7 +3,7 @@ title: "Política de privacidad del sitio web"
 description: "Cómo trata el sitio web lucivum.github.io los datos, las cookies y tus decisiones."
 language: "es-ES"
 effective_date: "8 de noviembre de 2026"
-last_updated: "8 de noviembre de 2026"
+last_updated: "14 de noviembre de 2026"
 effective_date_label: "Fecha de entrada en vigor"
 last_updated_label: "Última actualización"
 controller_title: "Responsable del tratamiento"
@@ -25,9 +25,9 @@ La base jurídica es mi interés legítimo en mantener un sitio web seguro y en 
 
 Más información: [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
 
-## 3. Cookies y Google Ads
+## 3. Cookies y Google Analytics
 
-Solo con tu consentimiento, el sitio web carga la etiqueta de Google Ads, que utiliza cookies para medir las visitas y los clics en los botones de Google Play. Cuando haces clic en un botón de Google Play, se registran la aplicación y el idioma de la página.
+Solo con tu consentimiento, el sitio web carga Google Analytics, que utiliza cookies para medir las visitas, las páginas vistas y los clics en los botones de Google Play. Cuando haces clic en un botón de Google Play, se registran la aplicación y el idioma de la página.
 
 Para ello, Google puede tratar información como:
 
@@ -36,7 +36,7 @@ Para ello, Google puede tratar información como:
 - identificadores de cookies;
 - las páginas visitadas y las interacciones en ellas.
 
-Hasta que aceptes, la etiqueta no se carga y no se envía ninguna solicitud a Google. Rechazar no limita el sitio web: todas las páginas funcionan igual en ambos casos.
+Hasta que aceptes, no se carga y no se envía ninguna solicitud a Google. Rechazar no limita el sitio web: todas las páginas funcionan igual en ambos casos.
 
 La base jurídica es tu consentimiento, que puedes retirar en cualquier momento.
 
@@ -44,6 +44,8 @@ Más información:
 
 - [Política de privacidad de Google](https://policies.google.com/privacy?hl=es)
 - [Cómo utiliza Google la información de los sitios web que usan sus servicios](https://policies.google.com/technologies/partner-sites?hl=es)
+
+El sitio web no utiliza los datos de Google Analytics con fines publicitarios, y las funciones publicitarias de la etiqueta de Google están desactivadas.
 
 ## 4. Tu decisión sobre las cookies
 

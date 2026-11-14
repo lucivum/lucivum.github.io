@@ -3,7 +3,7 @@ title: "网站隐私政策"
 description: "lucivum.github.io 网站如何处理数据、Cookie 以及您的选择。"
 language: "zh-CN"
 effective_date: "2026年11月8日"
-last_updated: "2026年11月8日"
+last_updated: "2026年11月14日"
 effective_date_label: "生效日期"
 last_updated_label: "最后更新"
 controller_title: "数据控制者"
@@ -25,9 +25,9 @@ email_label: "电子邮箱"
 
 更多信息：[GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
 
-## 3. Cookie 与 Google Ads
+## 3. Cookie 与 Google Analytics
 
-只有在您同意的情况下，本网站才会加载 Google Ads 代码，该代码使用 Cookie 统计访问量以及 Google Play 按钮的点击次数。当您点击 Google Play 按钮时，会记录相应的应用和页面语言。
+只有在您同意的情况下，本网站才会加载 Google Analytics，它使用 Cookie 统计访问量、浏览的页面以及 Google Play 按钮的点击次数。当您点击 Google Play 按钮时，会记录相应的应用和页面语言。
 
 为此，Google 可能会处理以下信息：
 
@@ -36,7 +36,7 @@ email_label: "电子邮箱"
 - Cookie 标识符；
 - 访问的页面以及在页面上的互动。
 
-在您同意之前，该代码不会加载，也不会向 Google 发送任何请求。拒绝不会限制网站的使用：无论哪种选择，所有页面的功能都完全相同。
+在您同意之前，它不会加载，也不会向 Google 发送任何请求。拒绝不会限制网站的使用：无论哪种选择，所有页面的功能都完全相同。
 
 处理的法律依据是您的同意，您可以随时撤回。
 
@@ -44,6 +44,8 @@ email_label: "电子邮箱"
 
 - [Google 隐私权政策](https://policies.google.com/privacy?hl=zh-CN)
 - [Google 如何使用来自使用其服务的网站的信息](https://policies.google.com/technologies/partner-sites?hl=zh-CN)
+
+本网站不会将 Google Analytics 数据用于广告，Google 代码的广告功能处于关闭状态。
 
 ## 4. 您的 Cookie 选择
 

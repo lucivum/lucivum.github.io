@@ -97,14 +97,12 @@ export const site = {
     name: 'Gabor Lengyel',
     email: 'lucivumx@gmail.com',
   },
-  ads: {
-    tagId: 'AW-18429356075',
+  analytics: {
     /**
-     * `send_to` of the Google Ads conversion action that counts a click on a Google Play
-     * badge, `AW-18429356075/<label>`. Empty until that action exists in Google Ads; every
-     * click is sent as a `play_store_click` event regardless.
+     * GA4 measurement ID, `G-XXXXXXXXXX`, from Google Analytics → Admin → Data streams.
+     * Empty until the property exists; GA4 is then simply not loaded.
      */
-    playClickConversion: '',
+    measurementId: 'G-05ZYJ0M3JT',
   },
 } as const;
 

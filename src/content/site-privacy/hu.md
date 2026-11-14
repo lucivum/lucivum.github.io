@@ -3,7 +3,7 @@ title: "A weboldal adatvédelmi tájékoztatója"
 description: "Hogyan kezeli a lucivum.github.io weboldal az adatokat, a sütiket és a döntéseidet."
 language: "hu-HU"
 effective_date: "2026. november 8."
-last_updated: "2026. november 8."
+last_updated: "2026. november 14."
 effective_date_label: "Hatálybalépés"
 last_updated_label: "Utolsó frissítés"
 controller_title: "Az adatkezelő"
@@ -25,9 +25,9 @@ Az adatkezelés jogalapja a biztonságos és működő weboldal üzemeltetéséh
 
 További információ: [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
 
-## 3. Sütik és Google Ads
+## 3. Sütik és Google Analytics
 
-A weboldal csak a hozzájárulásoddal tölti be a Google Ads címkét, amely sütikkel méri a látogatásokat és a Google Play gombokra leadott kattintásokat. Egy Google Play gombra kattintáskor az alkalmazás és az oldal nyelve kerül rögzítésre.
+A weboldal csak a hozzájárulásoddal tölti be a Google Analyticset, amely sütikkel méri a látogatásokat, a megtekintett oldalakat és a Google Play gombokra leadott kattintásokat. Egy Google Play gombra kattintáskor az alkalmazás és az oldal nyelve kerül rögzítésre.
 
 Ehhez a Google többek között az alábbi adatokat kezelheti:
 
@@ -36,7 +36,7 @@ Ehhez a Google többek között az alábbi adatokat kezelheti:
 - sütiazonosítók;
 - a meglátogatott oldalak és az azokon végzett műveletek.
 
-Amíg nem fogadod el, a címke nem töltődik be, és a weboldal semmilyen kérést nem küld a Google-nek. Az elutasítás nem korlátozza a weboldalt: minden oldal ugyanúgy működik.
+Amíg nem fogadod el, nem töltődik be, és a weboldal semmilyen kérést nem küld a Google-nek. Az elutasítás nem korlátozza a weboldalt: minden oldal ugyanúgy működik.
 
 Az adatkezelés jogalapja a hozzájárulásod, amelyet bármikor visszavonhatsz.
 
@@ -44,6 +44,8 @@ További információ:
 
 - [A Google adatvédelmi irányelvei](https://policies.google.com/privacy?hl=hu)
 - [Hogyan használja fel a Google a szolgáltatásait használó webhelyekről származó adatokat](https://policies.google.com/technologies/partner-sites?hl=hu)
+
+A weboldal a Google Analytics adatait nem használja reklámozásra, és a Google címkéjének reklámfunkciói ki vannak kapcsolva.
 
 ## 4. A sütikkel kapcsolatos döntésed
 

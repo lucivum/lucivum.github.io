@@ -3,7 +3,7 @@ title: "Website Privacy Policy"
 description: "How the lucivum.github.io website handles data, cookies and your choices."
 language: "en-US"
 effective_date: "November 8, 2026"
-last_updated: "November 8, 2026"
+last_updated: "November 14, 2026"
 effective_date_label: "Effective date"
 last_updated_label: "Last updated"
 controller_title: "Data controller"
@@ -25,9 +25,9 @@ The legal basis is my legitimate interest in running a secure and working websit
 
 More information: [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
 
-## 3. Cookies and Google Ads
+## 3. Cookies and Google Analytics
 
-With your consent only, the website loads the Google Ads tag, which uses cookies to measure visits and clicks on the Google Play buttons. When you click a Google Play button, the app and the page language are recorded.
+With your consent only, the website loads Google Analytics, which uses cookies to measure visits, the pages viewed, and clicks on the Google Play buttons. When you click a Google Play button, the app and the page language are recorded.
 
 To provide this, Google may process information such as:
 
@@ -36,7 +36,7 @@ To provide this, Google may process information such as:
 - cookie identifiers;
 - the pages visited and the interactions on them.
 
-Until you accept, the tag is not loaded and no request is made to Google. Rejecting does not limit the website: every page works the same either way.
+Until you accept, it is not loaded and no request is made to Google. Rejecting does not limit the website: every page works the same either way.
 
 The legal basis is your consent, which you can withdraw at any time.
 
@@ -44,6 +44,8 @@ More information:
 
 - [Google Privacy Policy](https://policies.google.com/privacy)
 - [How Google uses information from sites that use its services](https://policies.google.com/technologies/partner-sites)
+
+The website does not use Google Analytics data for advertising, and the advertising features of Google's tag are turned off.
 
 ## 4. Your cookie choice
 

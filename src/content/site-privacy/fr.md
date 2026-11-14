@@ -3,7 +3,7 @@ title: "Politique de confidentialité du site web"
 description: "Comment le site web lucivum.github.io traite les données, les cookies et vos choix."
 language: "fr-FR"
 effective_date: "8 novembre 2026"
-last_updated: "8 novembre 2026"
+last_updated: "14 novembre 2026"
 effective_date_label: "Date d’entrée en vigueur"
 last_updated_label: "Dernière mise à jour"
 controller_title: "Responsable du traitement"
@@ -25,9 +25,9 @@ La base juridique est mon intérêt légitime à exploiter un site web sûr et f
 
 Plus d’informations : [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
 
-## 3. Cookies et Google Ads
+## 3. Cookies et Google Analytics
 
-Uniquement avec votre consentement, le site web charge la balise Google Ads, qui utilise des cookies pour mesurer les visites et les clics sur les boutons Google Play. Lorsque vous cliquez sur un bouton Google Play, l’application et la langue de la page sont enregistrées.
+Uniquement avec votre consentement, le site web charge Google Analytics, qui utilise des cookies pour mesurer les visites, les pages consultées et les clics sur les boutons Google Play. Lorsque vous cliquez sur un bouton Google Play, l’application et la langue de la page sont enregistrées.
 
 Pour ce faire, Google peut traiter des informations telles que :
 
@@ -36,7 +36,7 @@ Pour ce faire, Google peut traiter des informations telles que :
 - les identifiants de cookies ;
 - les pages consultées et les interactions sur celles-ci.
 
-Tant que vous n’avez pas accepté, la balise n’est pas chargée et aucune requête n’est envoyée à Google. Refuser ne limite pas le site web : toutes les pages fonctionnent de la même manière dans les deux cas.
+Tant que vous n’avez pas accepté, il n’est pas chargé et aucune requête n’est envoyée à Google. Refuser ne limite pas le site web : toutes les pages fonctionnent de la même manière dans les deux cas.
 
 La base juridique est votre consentement, que vous pouvez retirer à tout moment.
 
@@ -44,6 +44,8 @@ Plus d’informations :
 
 - [Règles de confidentialité de Google](https://policies.google.com/privacy?hl=fr)
 - [Comment Google utilise les informations des sites qui utilisent ses services](https://policies.google.com/technologies/partner-sites?hl=fr)
+
+Le site web n’utilise pas les données de Google Analytics à des fins publicitaires, et les fonctions publicitaires de la balise Google sont désactivées.
 
 ## 4. Votre choix concernant les cookies
 
